@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Prueva del sistema">
+    <meta name="author" content="Froznar">
+	
+    <title>Hertzz Music</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="fonts/stylesheet.css">
+	<link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
+	
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- jQuery and Modernizr-->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/modernizr.custom.97074.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+  	<div class="col-md-6 col-md-offset-3">
+  		<h1>Hola</h1>
+  	</div>
+  	
+</div>
+</div>
+
+</body>
+</html>
