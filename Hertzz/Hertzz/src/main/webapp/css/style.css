@@ -26,12 +26,13 @@ html { -webkit-text-size-adjust: none;}
 .video embed,.video object,.video iframe { width: 100%;  height: auto;}
 img{max-width:100%;	height: auto;width: auto\9; /* ie8 */}
 
-h1 {font-size: 38px;}
-h2 {font-size: 36px;}
-h3 {font-size: 32px;}
-h4 {font-size: 28px;}
-h5 {font-size: 24px;}
-h6 {font-size: 20px;}
+h1 {font-size: 32px;}
+h2 {font-size: 28px;}
+h3 {font-size: 24px;}
+h4 {font-size: 20px;}
+h5 {font-size: 16px;}
+h6 {font-size: 12px;}
+
 
 h1,h2,h3,h4,h5,h6 {font-family: 'Roboto', sans-serif;font-weight: 600;color: #FFFFFF;}
 
@@ -375,13 +376,16 @@ textarea {display:block;width:90%;height:200px; border-radius:4px;-webkit-border
 	position: relative;
 	display: inline-block;
 	outline: none;
-	color: #DE5781;
+	color: #000;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-weight: 400;	
-	text-shadow: 0 0 1px rgba(255,255,255,0.3);
-	font-size: 14px;
+	font-weight: bold;	
+	text-shadow: 0 0 2px rgba(0,0,0,0.5);
+	font-size: 12px;
+	font-family: Tribal;
+	
+	background-color:#0ed2da;
 }
 a.btn:focus{outline: 0;}
 
@@ -390,19 +394,35 @@ a.btn:focus{outline: 0;}
 
 
 @font-face {
-  font-family: "Nervous";
+  font-family: "A1";
+  src: url("/fonts/Alice_in_Wonderland_3.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Tribal";
   src: url("/fonts/Tribal_Play.ttf") format("truetype");
 }
 
-
-#log{
+.log{
 	text-align: center;
+	
+	margin-top: 15%;
 }
 .titlefont{
-	font-family: Nervous;
-}
-	
-	
+	font-family: Tribal;
 	
 	
 }
+
+.bcol{
+	border-style: solid;
+    border-color:#000000 #5bf1ff #000000 #000000;
+}
+
+.cent{
+	text-align: center;
+}
+
+.button{}
+		
+}
+
