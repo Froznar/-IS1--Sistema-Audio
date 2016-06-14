@@ -1,0 +1,6 @@
+
+
+public interface PlaylistRepositorio extends CrudRepository<Playlist, Integer> {
+	List<Playlist> findAll();
+
+}

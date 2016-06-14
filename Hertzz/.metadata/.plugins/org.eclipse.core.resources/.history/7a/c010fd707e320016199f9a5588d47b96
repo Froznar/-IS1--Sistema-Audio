@@ -1,0 +1,9 @@
+package com.Hertzz.repositorio;
+
+import java.util.List;
+import org.springframework.data.repository.CrudRepository;
+import com.Hertzz.dominio.Albun;
+
+public interface ArtistaRepositorio extends CrudRepository<Albun, Integer> {
+	List<Albun> findAll();
+}

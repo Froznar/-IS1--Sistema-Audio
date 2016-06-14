@@ -3,7 +3,6 @@ package com.Hertzz.dominio;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
