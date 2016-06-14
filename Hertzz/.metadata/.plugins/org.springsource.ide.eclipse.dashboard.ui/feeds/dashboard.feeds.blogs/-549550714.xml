@@ -5,7 +5,79 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2016-06-13T14:57:00Z</updated>
+  <updated>2016-06-14T04:00:00Z</updated>
+  <entry>
+    <title>Spring Integration 4.3 GA is Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/06/14/spring-integration-4-3-ga-is-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2016-06-13:2524</id>
+    <updated>2016-06-14T04:00:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Dear Spring community,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;I&amp;#8217;m pleased to announce that Spring Integration Framework 4.3 GA is now available from &lt;a href="https://repo.spring.io"&gt;repo.spring.io&lt;/a&gt;, as well as Maven Central!
+Also the maintainance 4.2.8 version has been released, too.
+Together with an internal 4.2.7 release it includes some &lt;a href="https://jira.spring.io/issues/?jql=project%20%3D%20%22Spring%20Integration%22%20AND%20fixVersion%20in%20(%224.2.7%22%2C%20%224.2.8%22)%20%20ORDER%20BY%20fixVersion%2C%20priority%20DESC"&gt;important bug fixes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In addition to the feature themes mentioned in &lt;a href="https://spring.io/blog/2016/05/12/spring-integration-4-3-0-release-candidate-available"&gt;4.3 RC1 announcement&lt;/a&gt;, the GA release includes several major changes:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Upgrade to Spring Framework 4.3 GA, Spring AMQP 1.6 GA, Spring Security 4.1 GA;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;FtpRemoteFileTemplate&lt;/code&gt; now provides &lt;code&gt;ExistsMode&lt;/code&gt; option to control how an &lt;code&gt;exists()&lt;/code&gt; operation should work;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;FileSplitter&lt;/code&gt; lets represent &lt;code&gt;FileMarker&lt;/code&gt; object as a JSON string (&lt;code&gt;markersJson&lt;/code&gt; option) to avoid an additional &lt;code&gt;spring-integration-file&lt;/code&gt; dependency on the consumer applications in distributed environments;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A new &lt;code&gt;JdbcLockRegistry&lt;/code&gt; feature has been introduced. Special thanks to &lt;a href="https://spring.io/team/dsyer"&gt;Dave Syer&lt;/a&gt;!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Integration &lt;code&gt;Graph&lt;/code&gt; has been improved with generic gateway nodes and &lt;code&gt;LinkNode&lt;/code&gt; now has a &lt;code&gt;type&lt;/code&gt; (&lt;code&gt;input&lt;/code&gt;, &lt;code&gt;output&lt;/code&gt;, &lt;code&gt;error&lt;/code&gt;, &lt;code&gt;discard&lt;/code&gt;, &lt;code&gt;route&lt;/code&gt;) property for better visualization experience;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Other minor improvements and simple and not only (&lt;a href="https://jira.spring.io/browse/INT-4044"&gt;&lt;code&gt;WebSocketStompSessionManager.connect&lt;/code&gt;&lt;/a&gt;) bug fixes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The release addresses &lt;a href="https://jira.spring.io/issues/?jql=project%20%3D%20%22Spring%20Integration%22%20AND%20fixVersion%20in%20(%224.3%20M1%22%2C%20%224.3%20M2%22%2C%20%224.3%20RC1%22%2C%20%224.3%20GA%22)%20%20ORDER%20BY%20fixVersion%2C%20priority%20DESC"&gt;over 150 JIRA issues&lt;/a&gt;.
+Also see the &lt;a href="http://docs.spring.io/spring-integration/docs/4.3.0.RELEASE/reference/html/whats-new.html"&gt;What&amp;#8217;s New&lt;/a&gt; for a summary of the major changes.
+We are very grateful for a number of external contributions to the project - thank you all!.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;And as a teaser, not related to the release, but a new cool feature from legendary &lt;a href="https://spring.io/team/aclement"&gt;Andy Clement&lt;/a&gt; - &lt;a href="https://github.com/spring-projects/spring-flo"&gt;Spring Flo&lt;/a&gt; for Spring Integration.
+This project is fully based on our latest Integration Graph JSON model and lets to visualize an integration model and refresh it at runtime:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="imageblock"&gt;
+&lt;div class="content"&gt;
+&lt;img src="https://lh3.googleusercontent.com/KDR2qQ9l-PmBe7gBzPHXaJ8n1WitlAq4n8GVUvt3SHBfMOvzWWGpsz8j1UN73u8ecPYKPVOuclP_sJ5bANPLeYSHBP2PhH0-xT-qgpzF6wvNGa80R_ng7xSMAQDUdm7sWMYIMaE9Orjr7ZmEEhpLQWzEwKYD1GkXtjiRC9ibxEkRWeI_TACTCEg-648ke-ZehC2glqTUYiBXp-k8q3AmacOnRlZMXrvbbskrNi3VaCpWFEMpQssPhHrk82gFe56rY8lydGaLTKwwRhtLfGyc0_uQQKYXJTkQaBKzU258tNbbpJ4fwhpB8gaL-f5Jk7yn-1EG-BReRtzWZVMEsxvkjUMlX6PDpaEoCDTQRaN2zh3B1alS_TNhi_QAYEkAGvuDshg-LBFaFadxRnAua-oSazvDpVuoLKXf_4aYR_gpIA1LrYFs4k598khDXareUElgFB62STFUPAXGEX1qbAT0_VAYI_qPVXso39VMlQ9hgUkFCPtjCyW5LlDjaDPvF9gKDyZR6fs1TAYc-9rN45zozMZ8KiGl3TMkGo4sn-5sWS3GCTmiHVb5ihdkfqoXOtr5IcTi0kLuN3oM58_0M-F4TQPGyYxWeW0=w1237-h691-no" alt="SpringFlo.png"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The work is still in progress, so stay tuned!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Integration 4.3 is designed as a straightforward upgrade for all 4.x users.
+We will keep supporting the 4.2.x line until the end of this year; however, we recommend an upgrade to 4.3 at your earliest convenience.
+As previously hinted at, &lt;em&gt;the 4.3.x line will enjoy an extended support life until 2019&lt;/em&gt;, within the general Spring Framework 4 system requirements (JDK 6+, Servlet 2.5+ etc.).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Next up: Spring Integration 5.0, with Spring Framework 5.0 foundation and some Reactive Streams support.
+Don&amp;#8217;t miss &lt;a href="https://springoneplatform.io/"&gt;SpringOne Platform&lt;/a&gt; conference this August in Las Vegas to hear from us about all the new features and future plans!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/INT"&gt;JIRA&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.md"&gt;Contributions&lt;/a&gt; | &lt;a href="http://stackoverflow.com"&gt;StackOverflow&lt;/a&gt; (&lt;code&gt;spring-integration&lt;/code&gt; tag)&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Notes on Reactive Programming Part II: Writing Some Code</title>
     <link rel="alternate" href="https://spring.io/blog/2016/06/13/notes-on-reactive-programming-part-ii-writing-some-code" />
@@ -357,7 +429,7 @@ if you write this code yourself, or copy-paste it, remember to wait for the proc
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Note here the use of &lt;code&gt;flatMap()&lt;/code&gt; to push the items down into a "child" publisher, where we can control the subscription per item instead of for the whole sequence. Reactor has built in default behaviour to hang onto a single thread as long as possible, so we need to be explicit if we want it to process specific items or groups of items in a background thread. Actually, this is one of a handful of recognized tricks for forcing parallel processing (see the &lt;a href="https://github.com/reactor/reactive-streams-commons/issues/21(Reactive" class="bare"&gt;https://github.com/reactor/reactive-streams-commons/issues/21(Reactive&lt;/a&gt; Gems) issue for more detail).&lt;/p&gt;
+&lt;p&gt;Note here the use of &lt;code&gt;flatMap()&lt;/code&gt; to push the items down into a "child" publisher, where we can control the subscription per item instead of for the whole sequence. Reactor has built in default behaviour to hang onto a single thread as long as possible, so we need to be explicit if we want it to process specific items or groups of items in a background thread. Actually, this is one of a handful of recognized tricks for forcing parallel processing (see the &lt;a href="https://github.com/reactor/reactive-streams-commons/issues/21"&gt;Reactive Gems&lt;/a&gt; issue for more detail).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;The output looks like this:&lt;/p&gt;
@@ -2316,29 +2388,5 @@ so that you can review the state of the database (the default jdbc url is
 &lt;p&gt;For more specific information about Spring Roo project please see the&lt;br/&gt;&lt;a href="http://projects.spring.io/spring-roo/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-roo"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As always, you&amp;rsquo;ll also find Roo on Twitter - either follow &lt;a href="http://www.twitter.com/springroo"&gt;@SpringRoo&lt;/a&gt; or just include #SpringRoo in your tweets.&lt;/p&gt;
 &lt;p&gt;Stay tuned to Spring Roo news!&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - May 17th, 2016</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/05/17/this-week-in-spring-may-17th-2016" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2016-05-17:2504</id>
-    <updated>2016-05-17T19:12:07Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of This Week in Spring! As I write this, I&amp;rsquo;m in Chennai, India, en route to Bangalore, India for a day of exciting customer meetings and then I&amp;rsquo;m off to sunny Barcelona, Spain, &lt;a href="http://www.springio.net/"&gt;for the epic Spring IO event&lt;/a&gt;! Then, this Friday, I&amp;rsquo;m off to Kiev, Ukraine, &lt;a href="http://jeeconf.com/"&gt;for JEEConf&lt;/a&gt;. If you&amp;rsquo;re around, as always, &lt;a href="http://twitter.com/starbuxman"&gt;don&amp;rsquo;t be shy and say hi!&lt;/a&gt;. That said, let&amp;rsquo;s get into it!&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The BIG news: &lt;a href="https://spring.io/blog/2016/05/11/spring-cloud-brixton-release-is-available"&gt;&lt;strong&gt;Spring Cloud Brixton is now available&lt;/strong&gt;&lt;/a&gt;! Get &lt;a href="http://start.spring.io"&gt;the bits from the Spring Initializr&lt;/a&gt;. If you&amp;rsquo;ll permit a little back-patting, I submit that you might get a good feel for what concerns a technology like Spring Cloud addresses by &lt;a href="https://dzone.com/articles/the-power-patterns-and-pains-of-microservices"&gt;reading this article I wrote&lt;/a&gt; and you&amp;rsquo;ll learn how Spring Boot and Spring Cloud &lt;a href="https://www.youtube.com/watch?v=SFDYdslOvu8"&gt;are used in this video&lt;/a&gt;. That said, grab the bits and go!&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2016/05/10/spring-cloud-stream-1-0-0-release-is-available"&gt;Spring Cloud Stream 1.0.0 is here, at long last!&lt;/a&gt; Spring Cloud stream makes it simple to build collaborating messaging-based microservices.&lt;/li&gt;
-  &lt;li&gt;Spring Boot co-lead &lt;a href="https://spring.io/blog/2016/05/17/spring-boot-1-4-0-m3-available-now"&gt;Phil Webb just announced that Spring Boot 1.4.0.M3 is now available&lt;/a&gt;, &lt;em&gt;just in time&lt;/em&gt; for the Spring I/O event in Barcelona! There are a lot of great new features in 1.4, so make sure to try the bits early and often.&lt;/li&gt;
-  &lt;li&gt;Spring Security and Spring &lt;a href="https://spring.io/blog/2016/05/12/spring-session-1-2-0-released"&gt;Session lead Rob Winch has just announced Spring Session 1.2.0.RELEASE&lt;/a&gt;. This release &lt;a href="http://docs.spring.io/spring-session/docs/current/reference/html5/#what-s-new-in-1-2"&gt;includes &lt;em&gt;loads&lt;/em&gt; of cool stuff&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Spring Integration lead Gary Russell just announced &lt;a href="https://spring.io/blog/2016/05/12/spring-integration-4-3-0-release-candidate-available"&gt;Spring Integration 4.3.0.RC1&lt;/a&gt; (the last RC! so get the bits and kick the tires!)&lt;/li&gt;
-  &lt;li&gt;Spring IO Platform &lt;a href="https://spring.io/blog/2016/05/13/spring-io-platform-2-0-5-release"&gt;lead Andy Wilkinson has just announced Spring IO Platform 2.0.5&lt;/a&gt;. This release includes a few interesting library updates, including Spring Boot 1.3.5.RELEASE and Spring AMQP 1.5.6.RELEASE.&lt;/li&gt;
-  &lt;li&gt;Not one to rest on their laurels, &lt;a href="https://spring.io/blog/2016/05/17/spring-ldap-2-1-0-released"&gt;the Spring Security team just announced Spring LDAP 2.1.0&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;I really enjoyed this &lt;a href="http://blog.altoros.com/concourse-ci-architecture-features-and-usage.html"&gt;blog on using Pivotal&amp;rsquo;s Concourse CI pipeline tool with Cloud Foundry&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Pivotal&amp;rsquo;s very own Richard Seroter did a nice (albeit .NET-colored) &lt;a href="https://seroter.wordpress.com/2016/05/16/modern-open-source-messaging-apache-kafka-rabbitmq-and-nats-in-action/"&gt;comparison of messaging technologies RabbitMQ, NATS, and Apache Kafka&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This post on using &lt;a href="http://groovy-coder.com/?p=111"&gt;the Groovy-language Spock with Spring Boot 1.4&amp;rsquo;s new testing features is boss-sauce!&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The folks at &lt;a href="http://blog.takipi.com/the-top-100-java-libraries-in-2016-after-analyzing-47251-dependencies/"&gt;Takipi released an interesting post wherein they compared and discovered the top 100 most widely used Java projects&lt;/a&gt;. Naturally, Spring and the various Spring modules featured &lt;em&gt;very&lt;/em&gt; prominently, accounting for 44 of the top 100!&lt;/li&gt;
-&lt;/ul&gt;</content>
   </entry>
 </feed>
