@@ -1,0 +1,5 @@
+package com.Hertzz.repositorio;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.dominio.Cancion;
