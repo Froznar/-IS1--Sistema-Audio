@@ -9,14 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import com.Hertzz.dominio.Cancion;
+
 @Entity
 public class Album {
 	@Id
 	@SequenceGenerator(name = "Album_ID_GENERATOR", sequenceName = "Album_ID_SEQ")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Album_ID_GENERATOR")
-	private int Album_id;
+	private Integer Album_id;
 	private String Nombre_Album;
-	private List<Cancion> Canciones_Album;
+	//private List<Cancion> Canciones_Album;
 	private String Fecha_Album;
 	public Album(String nombre){
 		this.Nombre_Album = nombre;
@@ -28,9 +30,9 @@ public class Album {
 	public String getNombre_Album(){
 		return this.Nombre_Album;
 	}
-	public List<Cancion> getCanciones_Album(){
+	/*public List<Cancion> getCanciones_Album(){
 		return this.Canciones_Album;
-	}
+	}*/
 	public String getFecha_Album(){
 		return this.Fecha_Album;
 	}

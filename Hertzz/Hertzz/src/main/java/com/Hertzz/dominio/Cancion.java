@@ -23,5 +23,9 @@ public class Cancion {
 	private Integer Anteriror_Ranking_nota;
 	private Integer Anteriror_Ranking_popular;
 	
+	public Cancion(){
+	
+	}
+	
 	
 }

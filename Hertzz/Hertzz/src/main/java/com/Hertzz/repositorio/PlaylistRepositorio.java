@@ -8,6 +8,6 @@ import com.Hertzz.dominio.Cancion;
 public interface PlaylistRepositorio extends CrudRepository<Playlist, Integer> {
 	List<Playlist> findAll();
 	
-	void Reproducir(Cancion cancion);
-	void Reproducir_aleatorio();
+	//void Reproducir(Cancion cancion);
+	//void Reproducir_aleatorio();
 }

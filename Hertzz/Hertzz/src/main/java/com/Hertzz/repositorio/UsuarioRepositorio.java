@@ -8,10 +8,10 @@ import com.Hertzz.dominio.Playlist;
 public interface UsuarioRepositorio extends CrudRepository<Usuario, Integer> {
 	List<Usuario> findAll();
 	
-	void Seguir_Usuario(Integer usuario_id);
-	void Agregar_Playlist(Playlist playlist);
-	void Agragar_Cancion(Integer cancion_id, Integer playlist_id);
-	void Crear_playlist(String nombre);
-	void Calificar_cancion(Integer numero);
-	void Cerrar_cuenta();
+	//void Seguir_Usuario(Integer usuario_id);
+	//void Agregar_Playlist(Playlist playlist);
+	//void Agragar_Cancion(Integer cancion_id, Integer playlist_id);
+	//void Crear_playlist(String nombre);
+	//void Calificar_cancion(Integer numero);
+	//void Cerrar_cuenta();
 }

@@ -6,4 +6,5 @@ import com.Hertzz.dominio.Album;
 
 public interface AlbumRepositorio extends CrudRepository<Album, Integer> {
 	List<Album> findAll();
+	
 }

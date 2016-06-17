@@ -1,0 +1,35 @@
+package com.Hertzz.dominio;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+import com.Hertzz.dominio.Album;
+import com.Hertzz.dominio.Cancion;
+
+@Entity
+public class Artista {
+	@Id
+	@SequenceGenerator(name = "Artista_ID_GENERATOR", sequenceName = "Artista_ID_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Artista_ID_GENERATOR")
+	public Integer Id_artista;
+	public String nombre_artista;
+	public List<Cancion> canciones_artista;
+	public List<Album> albums_artista;
+
+
+	public Artista() {
+	}
+
+	public Artista(String nombre_artista, List<Cancion> canciones_artista,List<Album> albums_artista) {
+		this.nombre_artista = nombre_artista;		
+		this.canciones_artista = canciones_artista;
+		this.albums_artista = albums_artista;
+		
+	}
+}
+

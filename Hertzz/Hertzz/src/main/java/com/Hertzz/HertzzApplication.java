@@ -11,10 +11,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Hertzz.dominio.Album;
+import com.Hertzz.dominio.Artista;
+import com.Hertzz.dominio.Cancion;
+import com.Hertzz.dominio.Playlist;
+import com.Hertzz.dominio.Usuario;
+
 @EnableAutoConfiguration
 @Controller
 public class HertzzApplication {
 
+	
 	public static void main(String[] args) {
 		SpringApplication.run(HertzzApplication.class, args);
 	}
