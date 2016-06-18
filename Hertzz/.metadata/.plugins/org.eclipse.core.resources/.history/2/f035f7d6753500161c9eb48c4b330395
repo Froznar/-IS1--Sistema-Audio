@@ -1,0 +1,9 @@
+package com.Hertzz.repositorio;
+
+import java.util.List;
+import org.springframework.data.repository.CrudRepository;
+import com.Hertzz.dominio.Administrador;
+
+public interface AdministradorRepositorio extends CrudRepository<Administrador, Integer> {
+	List<Administrador> findAll();
+}

@@ -1,11 +1,11 @@
 package com.Hertzz.dominio;
 
+
 import javax.persistence.Entity;
 
 import com.Hertzz.dominio.Usuario;
 
 @Entity
-public class Administrador extends Usuario {
+public class ExUsuario extends Usuario{
 
-	public Administrador(){};
 }
