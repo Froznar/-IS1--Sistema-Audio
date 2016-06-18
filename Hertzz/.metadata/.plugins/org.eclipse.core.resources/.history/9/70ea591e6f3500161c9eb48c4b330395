@@ -9,11 +9,11 @@ import javax.persistence.SequenceGenerator;
 @Entity
 public class Cancion {
 	@Id
-	@SequenceGenerator(name = "Cancion_ID_GENERATOR", sequenceName = "CAncion_ID_SEQ")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Cancion_ID_GENERATOR")
+	@SequenceGenerator(name = "Alumno_ID_GENERATOR", sequenceName = "Alumno_ID_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Alumno_ID_GENERATOR")
 	private Integer id;
 	private Integer Artista_id;
-	private Integer Album_id;
+	private Integer Albun_id;
 	private String Nombre_Autor;
 	private String Nombre_Cancion;
 	private String Fecha_Publicacion;
