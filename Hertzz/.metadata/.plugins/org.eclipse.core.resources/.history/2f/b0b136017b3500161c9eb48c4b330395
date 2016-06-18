@@ -395,7 +395,7 @@ a.btn:focus{outline: 0;}
 
 @font-face {
   font-family: "A1";
-  src: url("/fonts/Tribal Times.ttf") format("truetype");
+  src: url("/fonts/Alice_in_Wonderland_3.ttf") format("truetype");
 }
 @font-face {
   font-family: "Tribal";
@@ -408,12 +408,11 @@ a.btn:focus{outline: 0;}
 	margin-top: 15%;
 }
 .titlefont{
-	font-family: Tribal;	
+	font-family: Tribal;
+	
+	
 }
-.normalfont{
-	font-family: A1;
-	color: #0ed2da;
-}
+
 .bcol{
 	border-style: solid;
     border-color:#000000 #5bf1ff #000000 #000000;

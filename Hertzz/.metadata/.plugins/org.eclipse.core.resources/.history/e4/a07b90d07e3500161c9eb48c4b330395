@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
 import com.Hertzz.dominio.Cancion;
@@ -18,8 +17,7 @@ public class Playlist{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Playlist_ID_GENERATOR")	
 	private Integer playlist_id;
 	private Integer usuario_id;
-	@ManyToMany()
-	public List<Cancion> Canciones_playlist;
+	//public List<Cancion> Canciones_playlist;
 	public String Nombre_playlist;
 
 	public Playlist()
