@@ -9,5 +9,4 @@ public interface ArtistaRepositorio extends CrudRepository<Artista, Integer> {
 	
 	//public void Agregar_ALbun(Integer id);
 	//public void Eliminar_ALbun(Integer id);
-	
 }

@@ -6,6 +6,4 @@ import com.Hertzz.dominio.Cancion;
 
 public interface CancionRepositorio extends CrudRepository<Cancion, Integer> {
 	List<Cancion> findAll();
-	
-	
 }

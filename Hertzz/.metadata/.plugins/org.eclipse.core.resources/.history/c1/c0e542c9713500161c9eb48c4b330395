@@ -7,7 +7,7 @@ import com.Hertzz.dominio.Artista;
 public interface ArtistaRepositorio extends CrudRepository<Artista, Integer> {
 	List<Artista> findAll();
 	
-	//public void Agregar_ALbun(Integer id);
+	Artista findById_artista(Integer id);
 	//public void Eliminar_ALbun(Integer id);
 	
 }

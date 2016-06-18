@@ -26,7 +26,6 @@ public class Usuario{
 	//public List<Usuario> Seguidores;
 	//public List<Usuario> Siguiendo;
 	//public List<Cancion>Historial;
-	public Usuario(){};
 	public Usuario(String Name,String Mail,String Password){
 		Nombre_completo=Name;
 		Correo_electronico=Mail;

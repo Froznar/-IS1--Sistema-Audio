@@ -9,5 +9,5 @@ public interface PlaylistRepositorio extends CrudRepository<Playlist, Integer> {
 	List<Playlist> findAll();
 	
 	//void Reproducir(Cancion cancion);
-	//void Reproducir_aleatorio(Playlist lista);
+	//void Reproducir_aleatorio();
 }
