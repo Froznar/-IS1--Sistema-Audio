@@ -21,7 +21,7 @@ public interface UsuarioRepositorio extends CrudRepository<Usuario, Integer> {
 	//void Calificar_cancion(Integer numero);
 	//void Cerrar_cuenta();
 	//Cancion Buscar_Cancion(String nombre);
-	@Query("SELECT c FROM Cancion WHERE nombre = :nombre")
+	@Query("SELECT c FROM Cancion AS c WHERE nombre_cancion = :nombre")
 	Cancion Buscar_Cancion(String nombre);
 }
 
