@@ -395,7 +395,7 @@ a.btn:focus{outline: 0;}
 
 @font-face {
   font-family: "A1";
-  src: url("/fonts/Lumus.ttf") format("truetype");
+  src: url("/fonts/Tribal Times.ttf") format("truetype");
 }
 @font-face {
   font-family: "Tribal";
@@ -412,7 +412,7 @@ a.btn:focus{outline: 0;}
 }
 .normalfont{
 	font-family: A1;
-	color: #2d3e59;
+	color: #57808f;
 }
 .bcol{
 	border-style: solid;

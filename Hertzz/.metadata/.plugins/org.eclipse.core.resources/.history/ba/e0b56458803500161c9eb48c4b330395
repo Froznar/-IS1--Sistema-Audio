@@ -385,7 +385,7 @@ textarea {display:block;width:90%;height:200px; border-radius:4px;-webkit-border
 	font-size: 12px;
 	font-family: Tribal;
 	
-	background-color:#b2d05e;
+	background-color:#4d5b95;
 }
 a.btn:focus{outline: 0;}
 
@@ -395,7 +395,7 @@ a.btn:focus{outline: 0;}
 
 @font-face {
   font-family: "A1";
-  src: url("/fonts/Lumus.ttf") format("truetype");
+  src: url("/fonts/Tribal Times.ttf") format("truetype");
 }
 @font-face {
   font-family: "Tribal";
@@ -412,7 +412,7 @@ a.btn:focus{outline: 0;}
 }
 .normalfont{
 	font-family: A1;
-	color: #2d3e59;
+	color: #57808f;
 }
 .bcol{
 	border-style: solid;
