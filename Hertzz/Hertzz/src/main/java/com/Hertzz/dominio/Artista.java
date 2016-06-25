@@ -42,6 +42,14 @@ public class Artista {
 		this.canciones_artista = canciones_artista;
 		this.albumes_artista = albums_artista;
 	}
+	
+	public boolean find_album(Album album){
+		for(Album i : albumes_artista){
+			if(i == album) return true;
+		}
+		return false;
+	}
+	
 	public List<Cancion> GetCanciones(){
 		return this.canciones_artista;
 	}

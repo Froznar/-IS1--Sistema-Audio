@@ -2,12 +2,17 @@ package com.Hertzz.servicio;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Hertzz.dominio.Cancion;
+import com.Hertzz.dominio.ExUsuario;
 import com.Hertzz.dominio.Playlist;
 import com.Hertzz.dominio.Usuario;
 import com.Hertzz.repositorio.CancionRepositorio;
+import com.Hertzz.repositorio.ExUsuarioRepositorio;
 import com.Hertzz.repositorio.PlaylistRepositorio;
 import com.Hertzz.repositorio.UsuarioRepositorio;
 
@@ -16,6 +21,15 @@ public class UsuarioServiceImpl implements UsuarioService {
 	UsuarioRepositorio usuarioRepositorio;
 	PlaylistRepositorio playlistRepositorio;
 	CancionRepositorio cancionRepositorio;
+	
+	@Autowired
+	public UsuarioServiceImpl(UsuarioRepositorio ur, PlaylistRepositorio pr, CancionRepositorio cr){
+		this.usuarioRepositorio = ur;
+		this.playlistRepositorio = pr;
+		this.cancionRepositorio = cr;
+	}
+	
+	@Transactional
 	@Override
 	public boolean crear_playlist(String nombre, Integer usuario_id) {
 		Playlist playlist = usuarioRepositorio.Buscar_Playlist(nombre, usuario_id);
@@ -26,6 +40,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return true;
 	}
 
+	@Transactional
 	@Override
 	public boolean crear_playlist(Playlist playlist, Integer usuario_id) {
 		if(playlist.get_Usuario_Id() == usuario_id) return false;
@@ -34,6 +49,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return true;
 	}
 
+	@Transactional
 	@Override
 	public boolean agregar_cancion(Integer cancion_id, Integer playlist_id) {
 		Playlist playlist = playlistRepositorio.findOne(playlist_id);
@@ -43,6 +59,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return true;
 	}
 
+	@Transactional
 	@Override
 	public boolean seguir_usuario(Integer usuario_id,Integer usuario_id2) {
 		Usuario principal = usuarioRepositorio.findOne(usuario_id);
@@ -52,6 +69,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return true;
 	}
 
+	@Transactional
 	@Override
 	public boolean stop_seguir(Integer usuario_id, Integer usuario_id2) {
 		Usuario principal = usuarioRepositorio.findOne(usuario_id);
@@ -59,6 +77,16 @@ public class UsuarioServiceImpl implements UsuarioService {
 		if(principal.buscar(principal.get_siguiendo(), a_no_seguir)== null) return false;
 		principal.delete_siguiendo(a_no_seguir);
 		return true;
+	}
+	
+	@Transactional
+	@Override
+	public boolean cerrar_sesion(Integer usuario_id) {
+		Usuario muerto = usuarioRepositorio.findOne(usuario_id);
+		ExUsuario vivo = (ExUsuario) muerto;
+		usuarioRepositorio.Eliminarse(usuario_id);
+		//ExUsuarioRepositorio.save(vivo);
+		return false;
 	}
 
 }
