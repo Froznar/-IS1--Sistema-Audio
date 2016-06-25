@@ -20,22 +20,15 @@ public class Playlist{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Playlist_ID_GENERATOR")	
 	private Integer playlist_id;
 	private Integer usuario_id;
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 	@ManyToMany
 	@JoinTable(name = "Playlist_Cancion",
 		joinColumns = @JoinColumn(name = "playlist_ID", referencedColumnName = "playlist_id"),
 		inverseJoinColumns = @JoinColumn(name = "Cancion_ID", referencedColumnName = "ID"))
 	public List<Cancion> Canciones_playlist;
-<<<<<<< Updated upstream
-	private String Nombre_playlist;
-=======
 
 	
 	public String Nombre_playlist;
->>>>>>> Stashed changes
 
 	public Playlist(String nombre, Integer usuario_id)
 	{
