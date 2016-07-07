@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Prueva del sistema">
+    <meta name="author" content="Froznar">
+	
+    <title>Hertzz Music</title>
+    <!-- Angular -->
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript">
+         function HertzzController($scope,$http) {
+             $http.get("usuarios").success( function(response) {
+                 $scope.alumnos = response;
+              });
+             /*$http.post("cursos", '{"codigo": "02", "nombre": "IPOO II"}').success( function(response) {
+              });*/
+             $scope.ButtonClick = function(){
+            	 var Usuario = {
+        				 usuario: $scope.user,
+        				 contrasenha: $scope.password
+        		 };
+            	 $http.get("login", {params: {"usuario": "rt", "contrasenha": "rt"}}).success( function(response) {
+                 	$scope.isAlumno = response;
+            	 });
+            	 //$scope.Message = $scope.isAlumno;
+        		 if($scope.isAlumno == true) {/*window.location.replace('/user.html?user='+$scope.user);*/}
+        		 /*{
+        			
+        			//{window.location.replace("user.html");}
+        		 }*/
+        		 if($scope.isAlumno == false) {$scope.Message = "Usuario o Contrasenha incorrectos"}
+        		 /*$http.get("matriculas").success( function(response) {
+                     $scope.matriculas = response;
+                  });*/
+        	 } 
+         }
+         /*var app = angular.module('MyApp', [])
+         app.controller('MyController', function($scope){
+        	 $scope.ButtonClick = function(){
+        		 $scope.Message = $scope.nombres
+        	 } 
+         })*/
+      </script>
+	
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="fonts/stylesheet.css">
+	<link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
+	
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- jQuery and Modernizr-->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/modernizr.custom.97074.js"></script>
+	
+</head>
+<body>
+
+<div class="container">
+  <div class="row log">
+  	<div class="col-md-4 col-md-offset-2 cent" ng-app="" ng-controller = "HertzzController">
+  		<fieldset>
+  			<p>
+  				<h2 class="normalfont">Ingresa y descubre una nueva experiencia</h2>
+	  			<h5 class="titlefont"> User</h5>
+	  			<input type="text" name="user" ng-model="user" />
+	  			<h5 class="titlefont"> Password</h5>
+	  			<input type="text" name="password" ng-model="password" />
+  			</p>
+  			<p>
+	  			<input class="btn btn-default" type="button" value="Submit" ng-click="ButtonClick()" />
+	  			<br><br>
+	  			<span ng-bind="Message"></span>
+  			</p>
+  		</fieldset>
+  	</div>
+  	<div class="col-md-4 cent">
+  		<img src="/images/Hertzz.png" class="img-responsive" alt="Responsive image">
+  		<h3 class="titlefont">Hertzz Music</h3>
+  		<input class="btn btn-default" type="submit" value="Register">
+  	</div>
+  	
+  	
+</div>
+</div>
+
+</body>
+</html>

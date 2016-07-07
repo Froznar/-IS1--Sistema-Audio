@@ -8,7 +8,15 @@
     <meta name="author" content="Froznar">
 	
     <title>Hertzz Music</title>
-	
+	<!-- Angular -->
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript">
+         function HertzzController($scope,$http) {
+             $http.get("usuario", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) {
+            	 $scope.usuario = response;
+              });
+         }
+    </script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	
@@ -28,7 +36,7 @@
 <body>
 
 <div class="container">
-  <div class="row">
+  <div class="row" ng-app="" ng-controller = "HertzzController">
   	<div class="col-md-2 bcol">
   		<img src="/images/Hertzz.png" class="img-responsive" alt="Responsive image">
   	</div>
@@ -40,13 +48,12 @@
   	</div>
   	<div class="col-md-2 cent">
   		<h2 class="titlefont">Usuario</h2>
+  		{{ usuario.Nombre_usuario }}
   	</div>
   	<div class="col-md-2 cent">
   		<h4 class="titlefont">nombre</h4>
-  	</div>
-  	
-  	
-</div>
+  		{{ usuario.Nombre_completo }}
+  	</div> 	
 </div>
 
 </body>

@@ -12,13 +12,13 @@ public interface AdministradorRepositorio extends CrudRepository<Administrador, 
 	List<Administrador> findAll();
 	//boolean saveArtista(Artista artista);
 	//boolean saveAlbum(Album album);
-	@Query("DELETE FROM Artista c WHERE c.Id_artista = :Id_artista")
+	@Query("DELETE FROM Artista c WHERE c.Id_artista = ?1")
 	boolean deleteArtista(Integer Id_artista);
 	//bool Agregar_Artista(Artista artita);
 	//bool Agregar_Album(Album Album);
 	
-	@Query("DELETE FROM Artista c WHERE c.Id_artista = :Id_artista")
+	@Query("DELETE FROM Artista c WHERE c.Id_artista = ?1")
 	boolean Eliminar_Artista(Integer Id_artista);
-	@Query("DELETE FROM Album c WHERE c.Album_id = :Album_id")
+	@Query("DELETE FROM Album c WHERE c.Album_id = ?1")
 	boolean Eliminar_Album(Integer Album_id);
 }

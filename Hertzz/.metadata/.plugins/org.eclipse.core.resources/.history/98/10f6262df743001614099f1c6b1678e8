@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Prueva del sistema">
+    <meta name="author" content="Froznar">
+	
+    <title>Hertzz Music</title>
+	<!-- Angular -->
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript">
+         function HertzzController($scope,$http) {
+             $http.get("usuario", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) {
+            	 $scope.usuario = response;
+              });
+         }
+    </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="fonts/stylesheet.css">
+	<link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
+	
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- jQuery and Modernizr-->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/modernizr.custom.97074.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row" ng-app="" ng-controller = "HertzzController">
+  	<div class="col-md-2 bcol">
+  		<img src="/images/Hertzz.png" class="img-responsive" alt="Responsive image">
+  	</div>
+  	<div class="col-md-2 cent">
+  		<h4 class="titlefont">Hertzz Music</h4>
+  	</div>
+  	<div class="col-md-4 cent">
+  		<h4 class="titlefont">Seguidores</h4>
+  	</div>
+  	<div class="col-md-2 cent">
+  		<h2 class="titlefont">Usuario</h2>
+  	</div>
+  	<div class="col-md-2 cent">
+  		<h4 class="titlefont">nombre</h4>
+  		{{ usuario.Nombre_usuario }}
+  	</div> 	
+</div>
+
+</body>
+</html>

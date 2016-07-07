@@ -17,19 +17,26 @@ public interface UsuarioRepositorio extends CrudRepository<Usuario, Integer> {
 	//void Agregar_Playlist(Playlist playlist);
 	//void Agregar_Cancion(Integer cancion_id, Integer playlist_id);
 	//bool Crear_playlist(String nombre);
-	@Query("DELETE FROM Playlist c WHERE c.playlist_id = :playlist_id")
+	
+	@Query("SELECT c FROM Usuario c WHERE c.Nombre_usuario = ?1 AND c.Contrasenha = ?2")
+	Usuario login_usuario(String usuario, String contrasenha);
+	
+	@Query("SELECT c FROM Usuario c WHERE c.Nombre_usuario = ?1")
+	Usuario find_usuario(String usuario);
+	
+	@Query("DELETE FROM Playlist c WHERE c.playlist_id = ?1")
 	boolean Eliminar_playlist(Integer playlist_id);
 	
-	@Query("DELETE FROM Usuario c WHERE c.Usuario_id = :usuario_id")
+	@Query("DELETE FROM Usuario c WHERE c.Usuario_id = ?1")
 	boolean Eliminarse(Integer usuario_id);
 	//void Copiar_playlist(Playlist lista);
 	//void Calificar_cancion(Integer numero);
 	//void Cerrar_cuenta();
 	//Cancion Buscar_Cancion(String nombre);
 	
-	@Query("SELECT c FROM Playlist AS c WHERE nombre_playlist = :nombre AND usuario_id = :usuario_id")
+	@Query("SELECT c FROM Playlist c WHERE c.Nombre_playlist = ?1 AND c.usuario_id = ?2")
 	Playlist Buscar_Playlist(String nombre, Integer usuario_id);
-	@Query("SELECT c FROM Cancion AS c WHERE nombre_cancion = :nombre")
+	@Query("SELECT c FROM Cancion c WHERE c.Nombre_Cancion = ?1")
 	Cancion Buscar_Cancion(String nombre);
 }
 

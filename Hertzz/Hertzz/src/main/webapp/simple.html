@@ -1,0 +1,36 @@
+<html>
+
+<head>
+	<title> Usuarios </title>
+	 <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type = "text/javascript">
+	 function UsuarioController($scope,$http) {
+         $http.get("usuarios").success( function(response) {
+             $scope.usuarios = response;
+          });
+		   /*$http.post("usuarios",'{"Nombre_completo": "lol", "Correo_electronico": "lol@hotmail.com", "Contrasenha": "lol"}').success(function (response){
+			   
+		   });*/
+	   }
+	
+	</script> 
+
+</head>
+
+
+
+<body>
+	<div ng-app="" ng-controller="UsuarioController">
+		<h3>Usuarios</h3>
+		<table>
+		<tr ng-repeat = "usuario in usuarios">
+			
+			 <td>{{ usuario.Contrasenha }}</td> 
+		</tr>
+		</table>
+	</div> 
+</body>
+
+
+
+</html>

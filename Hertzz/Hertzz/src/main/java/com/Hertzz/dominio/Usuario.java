@@ -3,29 +3,40 @@ package com.Hertzz.dominio;
 
 import java.util.List;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.InheritanceType;
+import javax.persistence.DiscriminatorType;
 
 import com.Hertzz.dominio.Cancion;
 import com.Hertzz.dominio.Playlist;
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+/*@DiscriminatorColumn(
+		name = "USER_TYPE",
+		discriminatorType= DiscriminatorType.STRING
+		)*/
 public class Usuario{
 	@Id
 	@SequenceGenerator(name = "Usuario_ID_GENERATOR", sequenceName = "Usuario_ID_SEQ")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Usuario_ID_GENERATOR")	
 
 	private Integer Usuario_id;
-	private String Nombre_completo;
+	public String Nombre_usuario;
+	public String Nombre_completo;
 	private String Correo_electronico;
-	private String Contrasenha;
+	public String Contrasenha;
 	
 	@OneToMany(mappedBy = "playlist_id")
 	private List<Playlist> Playlists;
@@ -49,10 +60,11 @@ public class Usuario{
 	private List<Cancion>Historial;
 	
 	public Usuario(){};
-	public Usuario(String Name,String Mail,String Password){
+	public Usuario(String m_user, String Name,String Mail,String Password){
+		Nombre_usuario=m_user;
 		Nombre_completo=Name;
 		Correo_electronico=Mail;
-		Contrasenha=Password;
+		setContrasenha(Password);
 	}
 	public List<Usuario> get_siguiendo(){
 		return this.Siguiendo;
@@ -75,6 +87,12 @@ public class Usuario{
 	}
 	public void add_siguiendo(Usuario usuario){
 		Siguiendo.add(usuario);
+	}
+	public String getContrasenha() {
+		return Contrasenha;
+	}
+	public void setContrasenha(String contrasenha) {
+		Contrasenha = contrasenha;
 	}
 
 }
