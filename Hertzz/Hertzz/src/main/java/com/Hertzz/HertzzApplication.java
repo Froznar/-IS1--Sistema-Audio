@@ -59,10 +59,19 @@ public class HertzzApplication {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	@ResponseBody
-	public String guardarUsuario(String usuario, String contrasenha){
+	public String login(String usuario, String contrasenha){
 		Usuario user = usuarioRepositorio.login_usuario(usuario, contrasenha);
 		if(user != null) return "true";
 		return "false";
 	}
 	
+	@RequestMapping(value = "/addUsuario", method = RequestMethod.POST)
+	@ResponseBody
+	public String addUsuario(@RequestBody Usuario usuario){
+		Usuario user = usuarioRepositorio.find_usuario(usuario.Nombre_usuario);
+		if(user!=null) return "false";
+
+		usuarioRepositorio.save(usuario);
+		return "true";
+	}
 }

@@ -35,7 +35,7 @@ public class Usuario{
 	private Integer Usuario_id;
 	public String Nombre_usuario;
 	public String Nombre_completo;
-	private String Correo_electronico;
+	public String Correo_electronico;
 	public String Contrasenha;
 	
 	@OneToMany(mappedBy = "playlist_id")
@@ -63,7 +63,7 @@ public class Usuario{
 	public Usuario(String m_user, String Name,String Mail,String Password){
 		Nombre_usuario=m_user;
 		Nombre_completo=Name;
-		Correo_electronico=Mail;
+		setCorreo_electronico(Mail);
 		setContrasenha(Password);
 	}
 	public List<Usuario> get_siguiendo(){
@@ -93,6 +93,12 @@ public class Usuario{
 	}
 	public void setContrasenha(String contrasenha) {
 		Contrasenha = contrasenha;
+	}
+	public String getCorreo_electronico() {
+		return Correo_electronico;
+	}
+	public void setCorreo_electronico(String correo_electronico) {
+		Correo_electronico = correo_electronico;
 	}
 
 }
