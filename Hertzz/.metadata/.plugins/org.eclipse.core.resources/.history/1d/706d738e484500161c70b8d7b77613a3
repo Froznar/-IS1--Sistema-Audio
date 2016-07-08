@@ -31,11 +31,8 @@
       </script>
 	
 	
-<!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<!-- Bootstrap Core JS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 	
 	<!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
@@ -45,6 +42,7 @@
 	
 	<!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
 	<!-- jQuery and Modernizr-->
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="js/modernizr.custom.97074.js"></script>
@@ -73,7 +71,7 @@
   	<div class="col-md-4 cent">
   		<img src="/images/Hertzz.png" class="img-responsive" alt="Responsive image">
   		<h3 class="titlefont">Hertzz Music</h3>
-  		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Register</button>
+  		<input class="btn btn-default" type="submit" value="Register">
   	</div>
   	
   	

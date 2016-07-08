@@ -12,10 +12,9 @@
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 	<script type="text/javascript">
          function HertzzController($scope,$http) {
-             $http.get("usuario", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) { //El window.location.search.replace("?","") solo retorna lo que hay despues del ? en la URL actual
-            	$scope.usuario = response; 
-             });
-      
+             $http.get("usuario", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) {
+            	 $scope.usuario = response;
+              });
          }
     </script>
     <!-- Bootstrap Core CSS -->
@@ -48,12 +47,12 @@
   		<h4 class="titlefont">Seguidores</h4>
   	</div>
   	<div class="col-md-2 cent">
-  		<h2 class="titlefont">{{ usuario.Nombre_usuario }}</h2>
-  		
+  		<h2 class="titlefont">Usuario</h2>
+  		{{ usuario.Nombre_usuario }}
   	</div>
   	<div class="col-md-2 cent">
-  		<h4 class="titlefont">{{ usuario.Nombre_completo }}</h4>
-  		
+  		<h4 class="titlefont">nombre</h4>
+  		{{ usuario.Nombre_completo }}
   	</div> 	
 </div>
 
