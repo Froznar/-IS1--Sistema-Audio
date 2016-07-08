@@ -6,7 +6,6 @@ import com.Hertzz.dominio.Artista;
 
 public interface ArtistaRepositorio extends CrudRepository<Artista, Integer> {
 	List<Artista> findAll();
-	
-	
+		
 	
 }
