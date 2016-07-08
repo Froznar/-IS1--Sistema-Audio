@@ -117,7 +117,7 @@
     <link rel="alternate" href="https://spring.io/blog/2016/07/05/spring-boot-1-4-0-rc1-available-now" />
     <category term="releases" label="Releases" />
     <author>
-      <name>StÈphane Nicoll</name>
+      <name>St√©phane Nicoll</name>
     </author>
     <id>tag:spring.io,2016-07-05:2545</id>
     <updated>2016-07-05T12:23:55Z</updated>
@@ -165,7 +165,7 @@
     <link rel="alternate" href="https://spring.io/blog/2016/07/04/spring-boot-1-3-6-available-now" />
     <category term="releases" label="Releases" />
     <author>
-      <name>StÈphane Nicoll</name>
+      <name>St√©phane Nicoll</name>
     </author>
     <id>tag:spring.io,2016-07-04:2543</id>
     <updated>2016-07-04T15:40:26Z</updated>
@@ -178,14 +178,14 @@
     <link rel="alternate" href="https://spring.io/blog/2016/07/04/spring-framework-4-3-1-and-4-2-7-available-now" />
     <category term="releases" label="Releases" />
     <author>
-      <name>StÈphane Nicoll</name>
+      <name>St√©phane Nicoll</name>
     </author>
     <id>tag:spring.io,2016-07-04:2542</id>
     <updated>2016-07-04T11:16:16Z</updated>
     <content type="html">&lt;p&gt;It is my pleasure to announce that the Spring Framework &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10000&amp;version=15568"&gt;4.3.1&lt;/a&gt; and &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10000&amp;version=15567"&gt;4.2.7&lt;/a&gt; maintenance releases &lt;a href="http://projects.spring.io/spring-framework"&gt;are available now&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The first maintenance release of the 4.3 line contains 40 fixes and improvements and is the base for the upcoming Spring Boot 1.4 release. The master branch has now switched to 5.0 and we&amp;rsquo;ll start merging 5.0 features in preparation for &lt;code&gt;5.0.0.M1&lt;/code&gt; later this month.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/SPR"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/htmlsingle/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;For more details about Spring Framework 4.3, check &lt;a href="https://2016.event.springoneplatform.io/schedule/sessions/modern_java_component_design_with_spring_framework_4_3.html"&gt;Juergen Hoeller&amp;rsquo;s session&lt;/a&gt; at &lt;a href="http://springoneplatform.io"&gt;SpringOne Platform&lt;/a&gt;, which is taking place in Las Vegas between August 1-4 this year. There are many other great talks so &lt;a href="https://2016.event.springoneplatform.io/schedule/sessions"&gt;check the agenda&lt;/a&gt; and &lt;a href="https://2016.event.springoneplatform.io/register"&gt;get your ticket&lt;/a&gt; if you havenít done so already.&lt;/p&gt;</content>
+&lt;p&gt;For more details about Spring Framework 4.3, check &lt;a href="https://2016.event.springoneplatform.io/schedule/sessions/modern_java_component_design_with_spring_framework_4_3.html"&gt;Juergen Hoeller&amp;rsquo;s session&lt;/a&gt; at &lt;a href="http://springoneplatform.io"&gt;SpringOne Platform&lt;/a&gt;, which is taking place in Las Vegas between August 1-4 this year. There are many other great talks so &lt;a href="https://2016.event.springoneplatform.io/schedule/sessions"&gt;check the agenda&lt;/a&gt; and &lt;a href="https://2016.event.springoneplatform.io/register"&gt;get your ticket&lt;/a&gt; if you haven‚Äôt done so already.&lt;/p&gt;</content>
   </entry>
   <entry>
     <title>Spring for Apache Kafka 1.0 and Spring Integration Kafka 2.0 go GA</title>
@@ -254,7 +254,7 @@ So, please, meet &lt;code&gt;spring-kafka:1.0.1.RELEASE&lt;/code&gt; as well.
 &lt;h1 id="spring-one-platform" class="sect0"&gt;&lt;a class="anchor" href="#spring-one-platform"&gt;&lt;/a&gt;Spring One Platform&lt;/h1&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="https://spring.io/team/grussell"&gt;Gary Russell&lt;/a&gt; will be talking about &lt;a href="https://2016.event.springoneplatform.io/schedule/sessions/spring_for_apache_kafka.html"&gt;Spring for Apache Kafka&lt;/a&gt; at &lt;a href="http://springoneplatform.io"&gt;Spring One Platform&lt;/a&gt;, which is taking place in Las Vegas between August 1-4 this year.
-There are many other great talks so &lt;a href="https://2016.event.springoneplatform.io/schedule/sessions"&gt;check the agenda&lt;/a&gt; and &lt;a href="https://2016.event.springoneplatform.io/register"&gt;get your ticket&lt;/a&gt; if you havenít done so already.&lt;/p&gt;
+There are many other great talks so &lt;a href="https://2016.event.springoneplatform.io/schedule/sessions"&gt;check the agenda&lt;/a&gt; and &lt;a href="https://2016.event.springoneplatform.io/register"&gt;get your ticket&lt;/a&gt; if you haven‚Äôt done so already.&lt;/p&gt;
 &lt;/div&gt;</content>
   </entry>
   <entry>
@@ -277,7 +277,7 @@ There are many other great talks so &lt;a href="https://2016.event.springoneplat
 &lt;/ul&gt;
 &lt;p&gt;And, as always, we welcome feedback: either on &lt;a href="https://github.com/spring-cloud"&gt;GitHub&lt;/a&gt;, on &lt;a href="https://gitter.im/spring-cloud/spring-cloud"&gt;gitter&lt;/a&gt;, on &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud"&gt;Stack Overflow&lt;/a&gt;, or on &lt;a href="https://twitter.com/SpringCloudOSS"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
 &lt;hr/&gt;
-&lt;p&gt;The Spring Cloud team will be talking about Spring Cloud at &lt;a href="http://springoneplatform.io"&gt;Spring One Platform&lt;/a&gt;, which will be taking place in Las Vegas between August 1-4 this year. There are many other great talks so &lt;a href="https://2016.event.springoneplatform.io/schedule/sessions"&gt;check the agenda&lt;/a&gt; and &lt;a href="https://2016.event.springoneplatform.io/register"&gt;get your ticket&lt;/a&gt; if you havenít done so already. &lt;/p&gt;</content>
+&lt;p&gt;The Spring Cloud team will be talking about Spring Cloud at &lt;a href="http://springoneplatform.io"&gt;Spring One Platform&lt;/a&gt;, which will be taking place in Las Vegas between August 1-4 this year. There are many other great talks so &lt;a href="https://2016.event.springoneplatform.io/schedule/sessions"&gt;check the agenda&lt;/a&gt; and &lt;a href="https://2016.event.springoneplatform.io/register"&gt;get your ticket&lt;/a&gt; if you haven‚Äôt done so already. &lt;/p&gt;</content>
   </entry>
   <entry>
     <title>Gradle Dependency Management Plugin 0.6.0 released</title>
@@ -378,7 +378,7 @@ There are many other great talks so &lt;a href="https://2016.event.springoneplat
   &lt;li&gt;Trevor Page put together a &lt;a href="http://coderscampus.com/ep01-spring-boot-rocks/"&gt;fun piece&lt;/a&gt; on how the Spring team seem hell-bent on making our lives as Java programmers easier and easier.&amp;quot; I get the feeling we&amp;rsquo;re making fans.. :-)&lt;/li&gt;
   &lt;li&gt;I haven&amp;rsquo;t read this yet, but this &lt;a href="http://www.springer.com/kr/book/9781484212394"&gt;book on Spring Cloud Data Flow looks interesting&lt;/a&gt;!&lt;/li&gt;
   &lt;li&gt;In New York City? Check out this meetup &lt;a href="http://www.meetup.com/NYC-SUG/events/232197164/"&gt;on Spring Cloud Data Flow&lt;/a&gt; with Spring Cloud Data Flow lead Mark Pollack himself!&lt;/li&gt;
-  &lt;li&gt;our very own Michael CotÈ put together a nice post, &lt;a href="https://www.infoq.com/articles/multi-cloud-choice"&gt;&amp;ldquo;Multi-Cloud is a Safety Belt for the Speed-Freaks&amp;rdquo; for InfoQ&lt;/a&gt;. His posts (and his talks and podcasts!) are insightful and often hilarious.&lt;/li&gt;
+  &lt;li&gt;our very own Michael Cot√© put together a nice post, &lt;a href="https://www.infoq.com/articles/multi-cloud-choice"&gt;&amp;ldquo;Multi-Cloud is a Safety Belt for the Speed-Freaks&amp;rdquo; for InfoQ&lt;/a&gt;. His posts (and his talks and podcasts!) are insightful and often hilarious.&lt;/li&gt;
 &lt;/ul&gt;&lt;h2&gt;&lt;a href="#springone-platform" class="anchor" name="springone-platform"&gt;&lt;/a&gt;SpringOne Platform&lt;/h2&gt;
 &lt;p&gt;I am &lt;em&gt;really&lt;/em&gt; looking forward to this year&amp;rsquo;s &lt;a href="http://springoneplatform.io"&gt;SpringOne Platform&lt;/a&gt; show, coming in early August. It&amp;rsquo;s an amazing time to build applications, and SpringOne Platform is in a unique position to capture the larger discussion: why do we #devops, #cloud, #agile, or #microservice? Join the discussion August 1-4, 2016 in beautiful Las Vegas and let&amp;rsquo;s find out!&lt;/p&gt;</content>
   </entry>
@@ -468,7 +468,7 @@ $ vault write secret/my-application password=H@rdT0Gu3ss
 &lt;p&gt;The generic secret backend allows storage of arbitrary values as a key-value store. A single context can store one or many key-value tuples. Contexts can be organized hierarchically and the used data format is JSON.&lt;/p&gt;
 &lt;p&gt;Vault provides besides the generic secret backend other backends that allow credential generation for MySQL, SQL Server, PostgreSQL, Consul and &lt;a href="https://www.vaultproject.io/docs/secrets/index.html"&gt;many more&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#authentication" class="anchor" name="authentication"&gt;&lt;/a&gt;Authentication&lt;/h2&gt;
 &lt;p&gt;Vault works primarily with tokens. Each token is assigned to a policy that may constrain the actions and the paths. Policies use path based matching to apply rules. Tokens can get metadata (key-values) and display names assigned which makes administration a bit more ops friendly.&lt;/p&gt;
-&lt;p&gt;You can create tokens manually and assign them to applications and users. Besides that there are a couple of &lt;a href="https://www.vaultproject.io/docs/auth/index.html"&gt;authentication mechanisms&lt;/a&gt; (LDAP, Username/Password, GitHub Token, Ö) that allow users to login and obtain a token. Tokens and authentication mechanisms can be revoked and that makes it easy to lock out a particular user.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-vault" class="anchor" name="spring-cloud-vault"&gt;&lt;/a&gt;Spring Cloud Vault&lt;/h2&gt;
+&lt;p&gt;You can create tokens manually and assign them to applications and users. Besides that there are a couple of &lt;a href="https://www.vaultproject.io/docs/auth/index.html"&gt;authentication mechanisms&lt;/a&gt; (LDAP, Username/Password, GitHub Token, ‚Ä¶) that allow users to login and obtain a token. Tokens and authentication mechanisms can be revoked and that makes it easy to lock out a particular user.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-cloud-vault" class="anchor" name="spring-cloud-vault"&gt;&lt;/a&gt;Spring Cloud Vault&lt;/h2&gt;
 &lt;p&gt;We at Pivotal took a look at Vault and considered it a promising tool. That&amp;rsquo;s why we built &lt;a href="https://github.com/spring-cloud-incubator/spring-cloud-vault-config"&gt;Spring Cloud Vault&lt;/a&gt;. Spring Cloud Vault is a configuration extension similar to &lt;a href="https://github.com/spring-cloud/spring-cloud-config"&gt;Spring Cloud Config&lt;/a&gt;. Spring Cloud Config targets external configuration management backed by data stored in various repositories, such as GitHub, SVN or even Vault.&lt;/p&gt;
 &lt;p&gt;With Spring Cloud Vault you can access your secrets inside Vault. Secrets are picked up at startup of your application. Spring Cloud Vault uses the data from your application (application name, active contexts) to determine contexts paths in which you stored your secrets.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint"&gt;/secret/{application}/{profile}&#xD;
@@ -638,7 +638,7 @@ public class SpringBootVaultHelloWorldApplication {&#xD;
 &lt;p&gt;&lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.0.0.RC1/reference/htmlsingle/#enable-disable-specific-features"&gt;Feature toggles&lt;/a&gt; to enable/disable analytics, stream, and task functionality.  By default, all three are enabled using the configuration.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;For all of the servers, including Data Flow Local Server, applications are no longer pre-registered.  This helps decouple our out of the box applicationsí releases from the Data Flow Server release lifecycle.  As a convenience, a list of the latest stream applications are available via user-friendly public URLs.  For example, the shell command&lt;/p&gt;
+&lt;p&gt;For all of the servers, including Data Flow Local Server, applications are no longer pre-registered.  This helps decouple our out of the box applications‚Äô releases from the Data Flow Server release lifecycle.  As a convenience, a list of the latest stream applications are available via user-friendly public URLs.  For example, the shell command&lt;/p&gt;
 &lt;div class="literalblock"&gt;
 &lt;div class="content"&gt;
 &lt;pre&gt;$ dataflow:&amp;gt;app import --uri http://bit.ly/stream-applications-kafka-maven&lt;/pre&gt;
@@ -649,7 +649,7 @@ public class SpringBootVaultHelloWorldApplication {&#xD;
 &lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;To support centralized and consistent management of an applicationís configuration properties, Spring Cloud Config client libraries have been included into the Spring Cloud Data Flow server as well as the Spring Cloud Stream applications provided by the &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-app-starters"&gt;Spring Cloud Stream App Starters repository&lt;/a&gt;.  You can also &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.0.0.RC1/reference/htmlsingle/#spring-cloud-dataflow-global-properties"&gt;pass common application properties&lt;/a&gt; to all streams when the Data Flow Server starts.&lt;/p&gt;
+&lt;p&gt;To support centralized and consistent management of an application‚Äôs configuration properties, Spring Cloud Config client libraries have been included into the Spring Cloud Data Flow server as well as the Spring Cloud Stream applications provided by the &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-app-starters"&gt;Spring Cloud Stream App Starters repository&lt;/a&gt;.  You can also &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.0.0.RC1/reference/htmlsingle/#spring-cloud-dataflow-global-properties"&gt;pass common application properties&lt;/a&gt; to all streams when the Data Flow Server starts.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;You can further customize our Spring Cloud Stream and Task application starters by using this version of &lt;a href="http://start-scs.cfapps.io/"&gt;Spring Initializr&lt;/a&gt;.&lt;/p&gt;
@@ -658,7 +658,7 @@ public class SpringBootVaultHelloWorldApplication {&#xD;
 &lt;p&gt;&lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/1.0.0.RC1/reference/htmlsingle/#spring-cloud-dataflow-stream-app-whitelisting"&gt;Whitelisting of Spring Boot application properties&lt;/a&gt; gives the shell/UI information to show a preferred set of boot properties to display for code completion and application info.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Naming changes.  The UI can now be found under the URL &lt;a href="http://localhost:9393/dashboard" class="bare"&gt;http://localhost:9393/dashboard&lt;/a&gt;.  All references to ëmoduleí have now been replaced with ëappí.&lt;/p&gt;
+&lt;p&gt;Naming changes.  The UI can now be found under the URL &lt;a href="http://localhost:9393/dashboard" class="bare"&gt;http://localhost:9393/dashboard&lt;/a&gt;.  All references to ‚Äòmodule‚Äô have now been replaced with ‚Äòapp‚Äô.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -687,19 +687,19 @@ public class SpringBootVaultHelloWorldApplication {&#xD;
 &lt;div class="ulist"&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Alignment with Cloud Foundryís global environment properties such as ORG, API, and URL as opposed to previous naming variants&lt;/p&gt;
+&lt;p&gt;Alignment with Cloud Foundry‚Äôs global environment properties such as ORG, API, and URL as opposed to previous naming variants&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Adds security integration to authenticate against OAUTH backend server thatís compatible with Cloud Foundry&lt;/p&gt;
+&lt;p&gt;Adds security integration to authenticate against OAUTH backend server that‚Äôs compatible with Cloud Foundry&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Publishes security configurations for easier overrides when connecting to OAUTH backend server thatís compatible with Cloud Foundry&lt;/p&gt;
+&lt;p&gt;Publishes security configurations for easier overrides when connecting to OAUTH backend server that‚Äôs compatible with Cloud Foundry&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Preliminary iterations on performance testing on Cloud Foundry with and without tapsís in real-time streaming pipeline&lt;/p&gt;
+&lt;p&gt;Preliminary iterations on performance testing on Cloud Foundry with and without taps‚Äôs in real-time streaming pipeline&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Builds upon feature-toggle support from Spring Cloud Data Flowís core project to conditionally refine what features get included in each release&lt;/p&gt;
+&lt;p&gt;Builds upon feature-toggle support from Spring Cloud Data Flow‚Äôs core project to conditionally refine what features get included in each release&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -726,7 +726,7 @@ public class SpringBootVaultHelloWorldApplication {&#xD;
   &lt;li&gt;Adds several improvements to launching of short-lived applications a.k.a tasks to Apache YARN&lt;/li&gt;
   &lt;li&gt;Builds upon Spring StateMachine 1.1.0.RELEASE that includes new features, stability, and API improvements&lt;/li&gt;
   &lt;li&gt;Adds support to configure command line args as a separate set of properties to be passed to an application when it&amp;rsquo;s deployed. This is an important requirement for running Spring Batch jobs&lt;/li&gt;
-  &lt;li&gt;Several Ambari plugin improvements to simplify provisioning of Spring Cloud Data Flowís YARN server&lt;/li&gt;
+  &lt;li&gt;Several Ambari plugin improvements to simplify provisioning of Spring Cloud Data Flow‚Äôs YARN server&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;To get started using Spring Cloud Data Flow for Apache YARN &lt;a href="http://docs.spring.io/spring-cloud-dataflow-server-yarn/docs/1.0.0.RC1/reference/htmlsingle/#_spring_cloud_data_flow_runtime"&gt;follow these steps&lt;/a&gt; outlined in the reference documentation.&lt;/p&gt;
 &lt;p&gt;For a complete list of changes and improvements, please refer to &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-yarn/issues?q=milestone%3A1.0.0.RC1+is%3Aclosed"&gt;1.0.0.RC1 release&lt;/a&gt;.&lt;/p&gt;</content>
@@ -744,7 +744,7 @@ public class SpringBootVaultHelloWorldApplication {&#xD;
 &lt;p&gt;This release candidate builds upon the recent 1.0.0.RC1 release of Spring Cloud Data Flow. Some highlights include:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Improves orchestration mechanics by inheriting latest improvements to spring-cloud-deployer contracts and the supported functionalities.&lt;/li&gt;
-  &lt;li&gt;Builds upon feature-toggle support from Spring Cloud Data Flowís core project to conditionally refine what features get included in each release&lt;/li&gt;
+  &lt;li&gt;Builds upon feature-toggle support from Spring Cloud Data Flow‚Äôs core project to conditionally refine what features get included in each release&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;To get started using Spring Cloud Data Flow for Mesos &lt;a href="http://docs.spring.io/spring-cloud-dataflow-server-mesos/docs/1.0.0.RC1/reference/htmlsingle/#_getting_started"&gt;follow these steps&lt;/a&gt; outlined in the reference documentation.&lt;/p&gt;
 &lt;p&gt;For a complete list of changes and improvements, please refer to the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-mesos/issues?q=milestone%3A1.0.0.RC1"&gt;1.0.0.RC1 issues&lt;/a&gt;.&lt;/p&gt;</content>
@@ -763,10 +763,10 @@ public class SpringBootVaultHelloWorldApplication {&#xD;
 &lt;ul&gt;
   &lt;li&gt;Implements the TaskLauncher SPI to support launching of short-lived applications a.k.a tasks. They will be created as Kubernetes jobs and each task launch will create a new pod as part of the Kubernetes job&lt;/li&gt;
   &lt;li&gt;Adds support to configure command line args as a separate set of properties to be passed to an application when it&amp;rsquo;s deployed. This is an important requirement for running Spring Batch jobs orchestrated as tasks using Spring Cloud Task programming model&lt;/li&gt;
-  &lt;li&gt;Adds support for RDBMS ìdatasourceî to supplement persistent repository requirements&lt;/li&gt;
+  &lt;li&gt;Adds support for RDBMS ‚Äúdatasource‚Äù to supplement persistent repository requirements&lt;/li&gt;
   &lt;li&gt;Adds &lt;code&gt;/info&lt;/code&gt; API to query health checks and to supplement probing requirements&lt;/li&gt;
   &lt;li&gt;Health endpoint improvements to standardize probing over readiness of all the applications orchestrated in Kubernetes&lt;/li&gt;
-  &lt;li&gt;Adds docker image for Spring Cloud Data Flowís Kubernetes server so it can be deployed as a Kubernetes replication controller and service&lt;/li&gt;
+  &lt;li&gt;Adds docker image for Spring Cloud Data Flow‚Äôs Kubernetes server so it can be deployed as a Kubernetes replication controller and service&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;To get started using Spring Cloud Data Flow for Kubernetes &lt;a href="http://docs.spring.io/spring-cloud-dataflow-server-kubernetes/docs/1.0.0.RC1/reference/htmlsingle/#_getting_started"&gt;follow these steps&lt;/a&gt; outlined in the reference documentation.&lt;/p&gt;
 &lt;p&gt;For a complete list of changes and improvements, please refer to the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-kubernetes/issues?q=milestone%3A1.0.0.RC1"&gt;1.0.0.RC1 issues&lt;/a&gt;.&lt;/p&gt;</content>

@@ -1296,3 +1296,9 @@ java.io.FileNotFoundException: /home/paracelso/Francisco/Hertzz Music/Hertzz/.me
 	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
 >>>>>>> Stashed changes
+
+!ENTRY org.eclipse.jface.text 2 0 2016-07-08 16:06:05.055
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2016-07-08 16:06:05.056
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

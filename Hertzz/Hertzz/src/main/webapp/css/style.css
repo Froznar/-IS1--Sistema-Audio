@@ -395,7 +395,7 @@ a.btn:focus{outline: 0;}
 
 @font-face {
   font-family: "A1";
-  src: url("/fonts/Tribal Times.ttf") format("truetype");
+  src: url("/fonts/Nervous.ttf") format("truetype");
 }
 @font-face {
   font-family: "Tribal";
@@ -419,11 +419,15 @@ a.btn:focus{outline: 0;}
     border-color:#000000 #5bf1ff #000000 #000000;
 }
 
+
 .cent{
 	text-align: center;
+	
 }
 
 .button{}
 		
 }
+
+
 
