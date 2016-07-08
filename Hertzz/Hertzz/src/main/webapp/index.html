@@ -9,8 +9,13 @@
 	
     <title>Hertzz Music</title>
 	
+	
+	
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!-- Bootstrap Core JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	
 	<!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
@@ -20,10 +25,12 @@
 	
 	<!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	
 	<!-- jQuery and Modernizr-->
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="js/modernizr.custom.97074.js"></script>
+	
+	
+	
 </head>
 <body>
 
@@ -46,12 +53,73 @@
   	<div class="col-md-4 cent">
   		<img src="/images/Hertzz.png" class="img-responsive" alt="Responsive image">
   		<h3 class="titlefont">Hertzz Music</h3>
-  		<input class="btn btn-default" type="submit" value="Register">
+  		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Register</button>
   	</div>
   	
-  	
-</div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title normalfont">Registrate</h4>
+      </div>
+      <div class="modal-body">
+		<form class="form-horizontal" name="commentform" method="post" action="send_form_email.php">
+		    <div class="form-group">
+		        <label class="control-label col-md-4" for="first_name">First Name</label>
+		        <div class="col-md-6">
+		            <input type="text" class="form-control" id="Rfirst_name" name="Rfirst_name" placeholder="First Name"/>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-md-4" for="last_name">Last Name</label>
+		        <div class="col-md-6">
+		            <input type="text" class="form-control" id="Rlast_name" name="Rlast_name" placeholder="Last Name"/>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-md-4" for="email">Email Address</label>
+		        <div class="col-md-6 input-group">
+		        <span class="input-group-addon">@</span>
+		            <input type="email" class="form-control" id="Remail" name="Remail" placeholder="Email Address"/>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-md-4" for="last_name">Password</label>
+		        <div class="col-md-6">
+		            <input type="password" class="form-control" id="Rpassword" name="Rpassword" placeholder="Password"/>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-md-4" for="last_name">Password</label>
+		        <div class="col-md-6">
+		            <input type="password" class="form-control" id="Rconfirmpassword" name="Rconfirmpassword" placeholder="Repeat your password"/>
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <div class="col-md-12">
+		            <button type="submit" value="Submit" class="btn btn-primary center-block">Registrarce</button>
+		        </div>
+		    </div>
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
 </div>
 
+
+
+
 </body>
+</html>
 </html>

@@ -21,7 +21,6 @@ public class Usuario{
 	@Id
 	@SequenceGenerator(name = "Usuario_ID_GENERATOR", sequenceName = "Usuario_ID_SEQ")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Usuario_ID_GENERATOR")	
-
 	private Integer Usuario_id;
 	private String Nombre_completo;
 	private String Correo_electronico;
