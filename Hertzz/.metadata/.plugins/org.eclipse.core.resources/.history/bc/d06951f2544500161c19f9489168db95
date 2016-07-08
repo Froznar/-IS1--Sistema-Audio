@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Prueva del sistema">
+    <meta name="author" content="Froznar">
+	
+    <title>Hertzz Music</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="fonts/stylesheet.css">
+	<link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
+	
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- jQuery and Modernizr-->
+	
+	<script src="js/modernizr.custom.97074.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+  	<div class="col-md-3 cent">
+  		<img src="images/Hertzz.png" class="img-responsive" alt="Responsive image">
+      <h4 class="titlefont">Hertzz Music</h4>
+  	</div>
+  	<div class="col-md-3 cent">
+  		<div class="form-group">
+  			<input class="btn btn-default" type="submit" value="Mi música">
+  		</div>
+  	</div>
+  	<div class="col-md-3 cent">
+  		<h4 class="titlefont">Seguidores</h4>
+  	</div>
+  	<div class="col-md-3 cent">
+  		<h2 class="titlefont">Usuario</h2>
+  	</div>
+  </div>
+<div class="container">
+  <div class="row">
+  	<!-- 100 CANCIONES MAS ESCUCHADAS -->
+    <div class="col-md-4 cent">
+    	<h3 class="normalfont">100 canciones mas escuchadas de la semana</h3>
+    </div>
+    <!-- BUSCAR DE CONTENIDO -->
+    <div class="col-md-4 cent">
+  		<h3 class="normalfont">Busqueda de Musica</h3>
+ 
+  		<label class="radio-inline"><input type="radio" name="optradio">Canción</label>
+		<label class="radio-inline"><input type="radio" name="optradio">Album</label>
+		  		
+  		<input type="text"  id="busqueda_cancion" name="Bcancion" placeholder="¿Qué deseas escuchar?"/>
+  		
+  		<div class="col-md-12 cent">
+  			<!-- Aqui resultado busqueda -->
+  		</div>
+  		<h3 class="normalfont">Busqueda de Usuarios</h3>
+  		
+  		<label class="radio-inline"><input type="radio" name="optradio">Nombre</label>
+		<label class="radio-inline"><input type="radio" name="optradio">Codigo</label>
+		  		
+  		<input type="text"  id="busqueda_usuario" name="Busuario" placeholder="¿Buscas a alguien?"/>
+    </div>
+    <!-- USUARIOS MAS ACTIVOS DE LOS ULTIMOS 6 MESES -->
+    <div class="col-md-4 cent">
+    	<h3 class="normalfont">Usuarios mas activos ultimos 6 meses</h3>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
