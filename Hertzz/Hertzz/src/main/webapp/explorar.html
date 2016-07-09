@@ -106,7 +106,7 @@
     	<h3 class="normalfont">100 canciones mas escuchadas de la semana</h3>
     	<table>
 			<tr ng-repeat = "cancion in top100">
-				 <td>{{ cancion.Nombre_Cancion }} {{cancion.Reproducciones}}</td> 
+				 <td>{{ cancion.Nombre_Cancion }}</td><td> {{cancion.Reproducciones}}</td> 
 			</tr>
 		</table>
     </div>
@@ -124,7 +124,7 @@
   		</fieldset>
   		<br>
   		<div class="col-md-12 cent" ng-show=true>
-  			Resultados:
+  			
 		    <table>
 			<tr ng-repeat = "cancion in canciones">
 				

@@ -1,8 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Prueva del sistema">
     <meta name="author" content="Froznar">
@@ -24,42 +24,185 @@
 	<!-- jQuery and Modernizr-->
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="js/modernizr.custom.97074.js"></script>
+
+
+	<!-- Bootstrap Core JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+
+    <!-- Angular -->
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript">
+         function HertzzController($scope,$http) {
+    	    $scope.ButtonClick = function(){
+    	    	var Cancion = {
+    	    	 Nombre_Cancion: $scope.nombre,
+    	    	 Nombre_Autor: $scope.autor,
+    	    	 Album_id: $scope.nombre_album,
+    			 Fecha_Publicacion: $scope.fecha,
+    			 Letra_cancion: $scope.letra
+	        	};
+    	    	console.log($scope.nombre,$scope.autor,$scope.letra)
+           	 	$http.post("addCancion", Cancion).then( function(response) { 
+           	 	}); 
+    	    	
+         	}
+    	    $scope.BuscarCancion = function(){
+           	 if($scope.btipo == 1){
+           		 $http.get("canciones", {params: {cancion: $scope.eleccion}}).then( function(response) { //Funcion asincrona
+                      	console.log($scope.eleccion);
+           		    $scope.albumes = null;
+           			$scope.canciones = response.data;
+                 	 	console.log($scope.canciones[0]);
+           		 });	 
+           	 }
+           	 else{
+           		 $http.get("albumes", {params: {album: $scope.eleccion}}).then( function(response) { //Funcion asincrona
+                     
+           		 $scope.albumes = response.data;
+           		 console.log($scope.albumes[0]);
+                  	  $scope.canciones = null;
+           		 });
+           	 }
+            }
+    	    $scope.otroClick = function(){
+           	
+             $http.get("canciones", {params: {Nombre_cancion: $scope.nombre_buscar}}).then( function(response) { //Funcion asincrona
+              });
+           	 
+       	 } 
+    	    
+    	   
+         }
+    </script>
 </head>
-<body>
+<body ng-app="" ng-controller = "HertzzController">
 
 <div class="container">
   <div class="row">
-  	<div class="col-md-3 cent">
+  	<div class="col-md-4 cent">
   		<img src="images/Hertzz.png" class="img-responsive" alt="Responsive image">
       <h4 class="titlefont">Hertzz Music</h4>
   	</div>
-  	<div class="col-md-3 cent">
-  		<input class="btn btn-default" type="submit" value="Submit">
+  	<div class="col-md-4 cent">
+  		<br>
+  		<br>
+  		<!--<input class="btn btn-default" type="submit" value="Log out">-->
   	</div>
-  	<div class="col-md-3 cent">
-  		<h4 class="titlefont">Seguidores</h4>
-  	</div>
-  	<div class="col-md-3 cent">
+  	
+  	<div class="col-md-4 cent">
   		<h2 class="titlefont">Usuario</h2>
   	</div>
   </div>
-<div class="container">
-  <div class="row">
-  	<!-- FORM SUBIR CONTENIDO -->
-    <div class="col-md-4 cent">
-    	<h3>Subir Contenido</h3>
-    </div>
-    <!-- BUSCAR PARA DAR DE BAJA CONTENIDO -->
-    <div class="col-md-4 cent">
-  		<h3>Dar de baja Contenido</h3>
-    </div>
-    <!-- CUALQUIER COSA EXTRA -->
-    <div class="col-md-4 cent">
-    	<h3>Extra</h3>
-    </div>
+  <div class="container">
+  	<div class="row">
+  	
+	<!-- FORM SUBIR CONTENIDO -->
+   	<div class="col-md-4 cent" >
+	<div class="modal-content">
+    	  <div class="modal-header">
+        	<h4 class="modal-title normalfont">Subir cancion</h4>
+      	</div>
+      <div>
+		<fieldset style="color:black; font-size:15px;" class="form-horizontal" name="commentform" method="post" action="guardar_cancion.php">
+		    <div class="form-group">
+		  
+		        <label  class="control-label col-md-4" >Nombre</label>
+		        <div class="col-md-6">
+		            <input type="text" class="form-control" name="nombre" ng-model="nombre"  />
+		        </div>
+		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-md-4" >Autor</label>
+		        <div class="col-md-6">
+		            <input type="text" class="form-control" name="autor" ng-model="autor"/>
+		        </div>
+		    </div>
+		    
+		    <div class="form-group">
+		        <label class="control-label col-md-4" >Album</label>
+		        <div class="col-md-6">
+		            <input type="text" class="form-control" name="nombre_album" ng-model="nombre_album"/>
+		        </div>
+		    </div>
+		    
+		    <div class="form-group">
+		        <label class="control-label col-md-4" >Fecha de publicacion</label>
+		        <div class="col-md-6">
+		            <input type="text" class="form-control" name="fecha" ng-model="fecha"/>
+		        </div>
+		    </div>
+
+		    <div class="form-group">
+		        <label class="control-label col-md-4" >Letra</label>
+		        <div class="col-md-6">
+		            <input type="text" class="form-control" name="letra" ng-model="letra"/>
+		        </div>
+		    </div>		    
+  			<p>
+	  			<input type="button" value="Ingresar" ng-click="ButtonClick()" />
+	  			<br><br>
+	  			<span ng-bind="Message"></span>
+  			</p>
+		</fieldset>
+   	</div>
   </div>
 </div>
 
+
+    <!-- BUSCAR PARA DAR DE BAJA CONTENIDO -->
+<div class="col-md-4 cent">
+  		<h3 class="normalfont">Busqueda de Musica</h3>
+ 		
+ 		<fieldset>
+  		<label class="radio-inline"><input type="radio" ng-model="btipo" name="optradio" ng-value="1"/>Canción</label>
+		<label class="radio-inline"><input type="radio" ng-model="btipo" name="optradio" ng-value="2"/>Album</label>
+		  		
+  		<input type="text"  id="busqueda_cancion" name="Bcancion" ng-model="eleccion" placeholder="¿Qué deseas escuchar?"/>
+  		<input class="btn btn-default" type="button" value="Buscar" ng-click="BuscarCancion()" />
+  		
+  		</fieldset>
+  		<br>
+  		<div class="col-md-12 cent" ng-show=true>
+  			Resultados:
+		    <table>
+			<tr ng-repeat = "cancion in canciones">
+				
+				 <td>{{ cancion.Nombre_Cancion }}</td> 
+			</tr>
+			<tr ng-repeat = "album in albumes">
+				
+				 <td>{{ album.Nombre_Album }}</td> 
+			</tr>
+			</table>
+  			
+  		</div>
+  		
+  		
+  		
+  		
+</div>
 </div>
 
+
+
+
+
+
+
+
+
+
+    <!-- Modal content-->
+
+
+    
+  </div>
+
+
+
+
+
 </body>
+</html>
