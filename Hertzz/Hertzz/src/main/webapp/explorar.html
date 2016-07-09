@@ -59,8 +59,10 @@
                    	  $scope.canciones = null;
             		 });
             	 }
-            	 
              }
+             $http.get("top100").success( function(response) {
+                 $scope.top100 = response.slice(0,100);
+              });
          }
       </script>
 	
@@ -95,6 +97,11 @@
   	<!-- 100 CANCIONES MAS ESCUCHADAS -->
     <div class="col-md-4 cent">
     	<h3 class="normalfont">100 canciones mas escuchadas de la semana</h3>
+    	<table>
+			<tr ng-repeat = "cancion in top100">
+				 <td>{{ cancion.Nombre_Cancion }} {{cancion.Reproducciones}}</td> 
+			</tr>
+		</table>
     </div>
     <!-- BUSCAR DE CONTENIDO -->
     <div class="col-md-4 cent">
