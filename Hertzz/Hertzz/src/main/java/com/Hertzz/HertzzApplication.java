@@ -87,9 +87,15 @@ public class HertzzApplication {
 		return usuarioRepositorio.Buscar_Album(album);
 	}
 	
-	@RequestMapping(value = "/top100", method = RequestMethod.GET)
+	@RequestMapping(value = "/top100Canciones", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Cancion> top100(){
 		return cancionRepositorio.Top100();
+	}
+	
+	@RequestMapping(value = "/top10Usuarios", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Usuario> top10(){
+		return usuarioRepositorio.Top10();
 	}
 }

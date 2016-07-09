@@ -44,6 +44,9 @@ public interface UsuarioRepositorio extends CrudRepository<Usuario, Integer> {
 	@Query("SELECT c FROM Album c WHERE c.Nombre_Album LIKE ?1"+"%")
 	List<Album> Buscar_Album(String nombre);
 	
+	@Query("SELECT c FROM Usuario c ORDER BY c.Popularidad DESC")
+	List<Usuario> Top10();
+	
 	/*static final String query = "SELECT c FROM Cancion c WHERE c.Nombre_Cancion LIKE CONCAT(?1,'%')";
 	@Query(query)
 	List<Cancion> Buscar_Cancion(String nombre);*/

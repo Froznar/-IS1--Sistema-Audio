@@ -60,8 +60,11 @@
             		 });
             	 }
              }
-             $http.get("top100").success( function(response) {
+             $http.get("top100Canciones").success( function(response) {
                  $scope.top100 = response.slice(0,100);
+              });
+             $http.get("top10Usuarios").success( function(response) {
+                 $scope.top10 = response.slice(0,10);
               });
          }
       </script>
@@ -143,6 +146,11 @@
     <!-- USUARIOS MAS ACTIVOS DE LOS ULTIMOS 6 MESES -->
     <div class="col-md-4 cent">
     	<h3 class="normalfont">Usuarios mas activos ultimos 6 meses</h3>
+    	<table>
+			<tr ng-repeat = "usuario in top10">
+				 <td>{{ usuario.Nombre_usuario }}</td> 
+			</tr>
+		</table>
     </div>
   </div>
 </div>

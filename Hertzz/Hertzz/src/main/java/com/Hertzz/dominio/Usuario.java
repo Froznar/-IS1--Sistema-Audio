@@ -37,6 +37,7 @@ public class Usuario{
 	public String Nombre_completo;
 	public String Correo_electronico;
 	public String Contrasenha;
+	public Integer Popularidad;
 	
 	@OneToMany(mappedBy = "playlist_id")
 	private List<Playlist> Playlists;
@@ -63,6 +64,7 @@ public class Usuario{
 	public Usuario(String m_user, String Name,String Mail,String Password){
 		Nombre_usuario=m_user;
 		Nombre_completo=Name;
+		Popularidad = 0;
 		setCorreo_electronico(Mail);
 		setContrasenha(Password);
 	}
