@@ -46,14 +46,18 @@
             	 if($scope.btipo == 1){
             		 $http.get("canciones", {params: {cancion: $scope.eleccion}}).then( function(response) { //Funcion asincrona
                        	console.log($scope.eleccion);
+            		    $scope.albumes = null;
             			$scope.canciones = response.data;
                   	 	console.log($scope.canciones[0]);
             		 });	 
             	 }
             	 else{
             		 $http.get("albumes", {params: {album: $scope.eleccion}}).then( function(response) { //Funcion asincrona
-                        $scope.canciones = response.data;
-                   	 });
+                      
+            		 $scope.albumes = response.data;
+            		 console.log($scope.albumes[0]);
+                   	  $scope.canciones = null;
+            		 });
             	 }
             	 
              }
@@ -104,14 +108,17 @@
   		<input class="btn btn-default" type="button" value="Submit" ng-click="BuscarCancion()" />
   		
   		</fieldset>
-  		
-  		<br><br><br>
+  		<br>
   		<div class="col-md-12 cent" ng-show=true>
   			Resultados:
 		    <table>
 			<tr ng-repeat = "cancion in canciones">
 				
 				 <td>{{ cancion.Nombre_Cancion }}</td> 
+			</tr>
+			<tr ng-repeat = "album in albumes">
+				
+				 <td>{{ album.Nombre_Album }}</td> 
 			</tr>
 			</table>
   			
