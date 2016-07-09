@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="javascripts/player.js"></script>
+    <link rel="stylesheet" href="css/player.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Prueva del sistema">
+    <meta name="author" content="Froznar">
+	
+    <title>Hertzz Music</title>
+	
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript">
+         function HertzzController($scope,$http) {
+        	 
+        	 
+        	 
+
+             $http.get("canciones").success( function(response) {
+                 $scope.canciones = response;
+                 console.log(response[0]);
+              });
+             
+             $http.get("usuario", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) {
+            	 $scope.usuario = response;
+            	 
+              });
+             
+             
+             $http.get("top10Cancioness").success( function(response) {
+                 $scope.top10Cancioness = response.slice(0,3);
+              });
+             
+             
+         }
+         
+        
+        
+    </script>
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="fonts/stylesheet.css">
+	<link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
+	
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- jQuery and Modernizr-->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/modernizr.custom.97074.js"></script>
+</head>
+<body  ng-app="" ng-controller = "HertzzController">
+
+<div class="container" >
+  <div class="row">
+  	<div class="col-md-3 cent">
+  		<img src="images/Hertzz.png" class="img-responsive" alt="Responsive image">
+      <h4 class="titlefont">Hertzz Music</h4>
+  	</div>
+  	<div class="col-md-3 cent">
+  		<input class="btn btn-default" type="submit" value="Submit">
+  	</div>
+  	<div class="col-md-3 cent">
+  		<h4 class="titlefont">Seguidores</h4>
+  	</div>
+  	<div class="col-md-3 cent">  		
+  		<h2 class="titlefont">{{ usuario.Nombre_usuario }}</h2>  	
+  		<h2 class="titlefont">{{ canciones[0].Nombre_Cancion}}</h2>  	
+  		
+  		
+  	</div>
+  </div>
+ 
+
+ 
+</div>
+
+<div class="container">
+  <div class="row">
+    <!--REPRODUCTOR-->
+    <div class="col-md-4">
+      <h3>Reproductor</h3>
+      
+ 
+      <div id="player" >
+        <div id="player_artwork">
+            <a href="javascript:void(0);">
+                <img src="images/Hertzz.png" class="img-responsive" alt="Responsive image">
+            </a>
+        </div>
+        <div id="player_track">
+            <div id="player_track_title">
+                <a href="">Track Title</a>
+            </div>
+            <div id="player_track_artist">
+                Artist
+            </div>
+        </div>
+        <div id="player_buttons">
+            <ul>
+                <li><a href="javascript:void(0);" id="player_prev"><span class="icon-to-start"></span></a></li>
+                <li><a href="javascript:void(0);" id="player_play"><span class="icon-play"></span></a></li>
+                <li><a href="javascript:void(0);" id="player_next"><span class="icon-to-end"></span></a></li>
+            </ul>
+        </div>
+    </div>
+      <div>
+		<h2>Audio MP3</h2>
+		<audio id="sonido" src="Game of Thrones.mp3">
+		</audio>
+		<button onclick="javascript:document.getElementById('sonido').play();">
+		Ejecutar</button>
+		<button onclick="javascript:document.getElementById('sonido').pause();">
+		Pausa</button>
+		</div>
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    <div class="col-md-8 cent">
+      <div class="row">
+        <!--TOP 10-->
+        <div class="col-md-12">
+          <h3>Top 10</h3>
+        </div>
+        <div class="col-md-6">
+          <h3>Busqueda</h3>
+        </div>
+        <div class="col-md-6">
+          <h3>Seguidores</h3>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+  	
+  	
+
+
+<div ng-app="" ng-controller = "HertzzController" class="container">
+<h3>Las 100 más Escuchadas</h3>
+<table>
+<tr>
+               <th>Autor Canción	</th>
+               <th>Nombre Canción	</th>
+               <th>Ranking Popularidad	</th>
+            </tr>
+<tr ng-repeat = "c100 in top10Cancioness">
+               <td >{{ c100.Nombre_Autor }}	</td>               
+               <td>{{ c100.Nombre_Cancion }}	</td>
+               <td>{{ c100.Anteriror_Ranking_popular }}	</td>
+               
+            </tr >	
+             
+  </table>
+</div>
+
+
+</body>
+</html>
+</html>
