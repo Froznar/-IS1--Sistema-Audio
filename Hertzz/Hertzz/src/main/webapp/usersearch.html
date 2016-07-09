@@ -21,7 +21,7 @@
            	 $http.get("search_usuario", {params:{usuario: $scope.name_ro_cod_user}}).success( function(response) {
              	 $scope.Ubuscado = response;
                  });
-           	$http.get("seguidores", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) {
+           	$http.get("seguidores", {params:{usuario: $scope.name_ro_cod_user}}).success( function(response) {
            		 $scope.seguidores = response;
            		 });
        	 }
