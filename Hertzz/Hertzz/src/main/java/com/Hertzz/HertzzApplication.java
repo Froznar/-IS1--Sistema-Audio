@@ -98,4 +98,17 @@ public class HertzzApplication {
 	public List<Usuario> top10(){
 		return usuarioRepositorio.Top10();
 	}
+	
+	@RequestMapping("/usuario2")
+	@ResponseBody
+	public Usuario usuario2(Integer usuario){
+		return usuarioRepositorio.find_usuario2(usuario);
+	}
+	
+	@RequestMapping("/seguidores")
+	@ResponseBody
+	public List<Usuario> seguidores(Integer usuario){
+		return usuarioRepositorio.find_seguidores_id(usuario);
+	}
+	
 }
