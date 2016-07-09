@@ -15,6 +15,7 @@
              $http.get("usuarios").success( function(response) {
                  $scope.usuarios = response;
               });
+             
              $scope.ButtonClick = function(){
             	 var Usuario = {
         				 usuario: $scope.user,

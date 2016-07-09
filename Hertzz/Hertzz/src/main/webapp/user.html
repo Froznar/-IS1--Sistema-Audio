@@ -12,6 +12,7 @@
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 	<script type="text/javascript">
          function HertzzController($scope,$http) {
+        	 
              $http.get("usuario", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) {
             	 $scope.usuario = response;
               });
@@ -32,6 +33,10 @@
                       $scope.canciones = null;
                  });
                }
+             }
+             $scope.Explorar = function(){
+            	 $scope.userpar = window.location.search.replace("?","");
+            	 window.location.replace('/explorar.html?' + $scope.userpar);
              }
          }
     </script>
@@ -69,7 +74,7 @@
       <br>
       <br>
       <br>
-  		<input class="btn btn-default" type="submit" value="Explorar" onclick = "location='/explorar.html'">
+  		<input class="btn btn-default" type="submit" value="Explorar" ng-click = "Explorar()">
   	</div>
   	<div class="col-md-3 cent">
   		<h4 class="titlefont">Seguidores</h4>

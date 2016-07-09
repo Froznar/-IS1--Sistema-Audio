@@ -8,7 +8,25 @@
     <meta name="author" content="Froznar">
 	
     <title>Hertzz Music</title>
-	
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript">
+         function HertzzController($scope,$http) {
+            var indice = window.location.search.indexOf("!");
+            $scope.usuario_r = window.location.search.replace("?","")
+    		$scope.usuario_r = $scope.usuario_r.substr(indice);
+            $http.get("usuario", {params:{usuario: $scope.usuario_r}}).success( function(response) {
+            	 $scope.usuario = response;
+              });
+            $scope.BuscarUsuario = function(){
+           	 $http.get("search_usuario", {params:{usuario: $scope.name_ro_cod_user}}).success( function(response) {
+             	 $scope.Ubuscado = response;
+                 });
+           	$http.get("seguidores", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) {
+           		 $scope.seguidores = response;
+           		 });
+       	 }
+     }
+    </script>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	
@@ -25,7 +43,7 @@
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="js/modernizr.custom.97074.js"></script>
 </head>
-<body>
+<body ng-app="" ng-controller = "HertzzController">
 
 <div class="container">
   <div class="row">
@@ -45,7 +63,7 @@
   		<h4 class="titlefont">Seguidores</h4>
   	</div>
   	<div class="col-md-3 cent">
-  		<h2 class="titlefont">Usuario</h2>
+  		<h2 class="titlefont">{{usuario.Nombre_usuario}}</h2>
   	</div>
   </div>
 <div class="container">
@@ -54,7 +72,7 @@
     	<div class="row">
     		<!--INFO USUARIO BUSCADO-->
     		<div class="col-md-12">
-      			<h3>Nombre usuario</h3>
+      			<h3>{{usuario.Nombre_completo}}</h3>
       		</div>
       		<!--CANCIONES MAS ESCUCHADAS 12 MESES-->
       		<div class="col-md-12">
@@ -70,11 +88,36 @@
         </div>
         <!--SEGUIDORES-->
         <div class="col-md-6">
-          <h3>Busqueda</h3>
+          <h3 class="normalfont">Busqueda de Usuarios</h3>
+  			<fieldset>
+  				
+  				<input type="text"  id="busqueda_usuario" name="Busuario" ng-model="name_ro_cod_user" placeholder="¿Buscas a alguien?"/>
+  				<input class="btn btn-default" type="button" value="Buscar" ng-click="BuscarUsuario()" />
+  			</fieldset>
+  			<div class="col-md-12 cent">
+  			
+		    	<table  class="tablesxD">
+					<tr>
+						<td>{{ Ubuscado.Nombre_completo }}</td>
+					</tr> 
+					<tr>
+						<td>{{ Ubuscado.Correo_electronico }}</td>
+					</tr> 
+				
+				</table>
+			<fieldset>
+  				<input class="btn btn-default" type="button" value="Saber más" ng-click="BuscarMasUsuario()"/>
+  			</fieldset>
+  			</div>
         </div>
         <!--LISTAS DE REPRODUCCION-->
         <div class="col-md-6">
-          <h3>Seguidores</h3>
+          <h4 class="titlefont">Seguidores</h4>
+  			<table>
+				<tr ng-repeat = "seguidor in seguidores">
+					 <td>{{ seguidor.Nombre_completo }}</td> 
+				</tr>
+			</table>
         </div>
         <!--A QUIEN SIGUE-->
         <div class="col-md-6">

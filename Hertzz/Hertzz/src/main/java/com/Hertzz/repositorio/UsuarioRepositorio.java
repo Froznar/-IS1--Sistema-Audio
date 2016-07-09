@@ -47,6 +47,12 @@ public interface UsuarioRepositorio extends CrudRepository<Usuario, Integer> {
 
 	@Query("SELECT c FROM Usuario c ORDER BY c.Popularidad DESC")
 	List<Usuario> Top10();
+	
+	@Query("SELECT c FROM Usuario c WHERE c.Usuario_id = ?1")
+	Usuario find_usuario2(Integer usuario);
+	
+	@Query("SELECT c.Seguidores FROM Usuario c WHERE c.Nombre_usuario = ?1")
+	List<Usuario> find_seguidores_id(String usuario);
 
 	
 	/*static final String query = "SELECT c FROM Cancion c WHERE c.Nombre_Cancion LIKE CONCAT(?1,'%')";

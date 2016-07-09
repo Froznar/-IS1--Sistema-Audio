@@ -28,11 +28,24 @@
 	<script type="text/javascript">
          function HertzzController($scope,$http) {
              
+        	 $http.get("usuario", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) {
+            	 $scope.usuario = response;
+              });
              $scope.BuscarUsuario = function(){
             	 $http.get("search_usuario", {params:{usuario: $scope.name_ro_cod_user}}).success( function(response) {
-                	 $scope.Ubuscado = response;
+              	 $scope.Ubuscado = response;
                   });
         	 }
+             $scope.MiMusica = function(){
+            	 $scope.userpar = window.location.search.replace("?","");
+            	 window.location.replace('/user.html?' + $scope.userpar);
+             }
+             
+             $scope.BuscarMasUsuario = function(){
+            	 $scope.userpar = window.location.search.replace("?","");
+            	 
+            	 window.location.replace('/usersearch.html?' + $scope.userpar + '!' + $scope.Ubuscado.Nombre_usuario);
+             }
              $scope.BuscarCancion = function(){
             	 if($scope.btipo == 1){
             		 $http.get("canciones", {params: {cancion: $scope.eleccion}}).then( function(response) { //Funcion asincrona
@@ -73,7 +86,7 @@
   		<br>
   		<br>
   		<br>
-  		<input class="btn btn-default" type="submit" value="Mi música" onclick = "location='/user.html'">
+  		<input class="btn btn-default" type="submit" value="Mi música" ng-click = "MiMusica()">
   		
   	</div>
   	<div class="col-md-3 cent">
@@ -83,7 +96,7 @@
   	<div class="col-md-3 cent">
   		
   		<br>
-  		<h2 class="titlefont">Usuario</h2>
+  		<h2 class="titlefont">{{usuario.Nombre_usuario}}</h2>
   	</div>
   </div>
 <div class="container">
@@ -144,7 +157,7 @@
 				
 			</table>
 			<fieldset>
-  				<input class="btn btn-default" type="button" value="Saber más" ng-click="BuscarMasUsuario()" onclick = "location='/usersearch.html'" />
+  				<input class="btn btn-default" type="button" value="Saber más" ng-click="BuscarMasUsuario()"/>
   			</fieldset>
   		</div>
     </div>
