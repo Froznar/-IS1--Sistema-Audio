@@ -24,7 +24,7 @@
 	<!-- jQuery and Modernizr-->
 	
 	<script src="js/modernizr.custom.97074.js"></script>
-	
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 	<script type="text/javascript">
          function HertzzController($scope,$http) {
              $http.get("usuarios").success( function(response) {
@@ -41,12 +41,27 @@
            		 	else {$scope.Message = "Usuario o Contrasenha incorrecto";}
             	 });
             	 //Si el if y else van aqui, respuesta aun no tiene valor y entra al else.
-        	 } 
+        	 }
+             $scope.BuscarCancion = function(){
+            	 if($scope.btipo == 1){
+            		 $http.get("canciones", {params: {cancion: $scope.eleccion}}).then( function(response) { //Funcion asincrona
+                       	console.log($scope.eleccion);
+            			$scope.canciones = response.data;
+                  	 	console.log($scope.canciones[0]);
+            		 });	 
+            	 }
+            	 else{
+            		 $http.get("albumes", {params: {album: $scope.eleccion}}).then( function(response) { //Funcion asincrona
+                        $scope.canciones = response.data;
+                   	 });
+            	 }
+            	 
+             }
          }
       </script>
 	
 </head>
-<body>
+<body  ng-app="" ng-controller = "HertzzController">
 
 <div class="container">
   <div class="row">
@@ -80,15 +95,29 @@
     <!-- BUSCAR DE CONTENIDO -->
     <div class="col-md-4 cent">
   		<h3 class="normalfont">Busqueda de Musica</h3>
- 
-  		<label class="radio-inline"><input type="radio" ng-model="btipo" name="optradio">Canción</label>
-		<label class="radio-inline"><input type="radio" ng-model="btipo" name="optradio">Album</label>
+ 		
+ 		<fieldset>
+  		<label class="radio-inline"><input type="radio" ng-model="btipo" name="optradio" ng-value="1"/>Canción</label>
+		<label class="radio-inline"><input type="radio" ng-model="btipo" name="optradio" ng-value="2"/>Album</label>
 		  		
-  		<input type="text"  id="busqueda_cancion" name="Bcancion" ng-model="user" placeholder="¿Qué deseas escuchar?"/>
+  		<input type="text"  id="busqueda_cancion" name="Bcancion" ng-model="eleccion" placeholder="¿Qué deseas escuchar?"/>
+  		<input class="btn btn-default" type="button" value="Submit" ng-click="BuscarCancion()" />
   		
-  		<div class="col-md-12 cent">
-  			<!-- Aqui resultado busqueda -->
+  		</fieldset>
+  		
+  		<br><br><br>
+  		<div class="col-md-12 cent" ng-show=true>
+  			Resultados:
+		    <table>
+			<tr ng-repeat = "cancion in canciones">
+				
+				 <td>{{ cancion.Nombre_Cancion }}</td> 
+			</tr>
+			</table>
+  			
   		</div>
+  		
+  		
   		<h3 class="normalfont">Busqueda de Usuarios</h3>
   		<fieldset>
   			<label class="radio-inline"><input type="radio" name="optradio">Nombre</label>

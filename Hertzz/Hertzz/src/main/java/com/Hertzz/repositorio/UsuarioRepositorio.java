@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import com.Hertzz.dominio.Album;
 import com.Hertzz.dominio.Cancion;
 import com.Hertzz.dominio.Playlist;
 import com.Hertzz.dominio.Usuario;
@@ -36,7 +37,16 @@ public interface UsuarioRepositorio extends CrudRepository<Usuario, Integer> {
 	
 	@Query("SELECT c FROM Playlist c WHERE c.Nombre_playlist = ?1 AND c.usuario_id = ?2")
 	Playlist Buscar_Playlist(String nombre, Integer usuario_id);
-	@Query("SELECT c FROM Cancion c WHERE c.Nombre_Cancion = ?1")
-	Cancion Buscar_Cancion(String nombre);
+	
+	@Query("SELECT c FROM Cancion c WHERE c.Nombre_Cancion LIKE ?1"+"%")
+	List<Cancion> Buscar_Cancion(String nombre);
+	
+	@Query("SELECT c FROM Album c WHERE c.Nombre_Album LIKE ?1"+"%")
+	List<Album> Buscar_Album(String nombre);
+	
+	/*static final String query = "SELECT c FROM Cancion c WHERE c.Nombre_Cancion LIKE CONCAT(?1,'%')";
+	@Query(query)
+	List<Cancion> Buscar_Cancion(String nombre);*/
+
 }
 

@@ -74,4 +74,16 @@ public class HertzzApplication {
 		usuarioRepositorio.save(usuario);
 		return "true";
 	}
+	
+	@RequestMapping(value = "/canciones", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Cancion> canciones(String cancion){
+		return usuarioRepositorio.Buscar_Cancion(cancion);
+	}
+	
+	@RequestMapping(value = "/albumes", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Album> albumes(String album){
+		return usuarioRepositorio.Buscar_Album(album);
+	}
 }

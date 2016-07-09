@@ -45,7 +45,7 @@
         		 };
             	 $http.post("addUsuario", Usuario).then( function(response) { //Funcion asincrona
                  	var respuesta = response.data;
-                 	if(respuesta == "true") {} //Me redirecciona a /user.html?usuario
+                 	if(respuesta == "true") {$scope.Message = "Se ha registrado con exito."} //Me redirecciona a /user.html?usuario
            		 	else {$scope.Message = "Usuario ya existe.";}
                  	console.log("post");
             	 });
