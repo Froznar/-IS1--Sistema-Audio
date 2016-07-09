@@ -108,5 +108,9 @@ public class HertzzApplication {
 		return user;
 	}
 	
-
+	@RequestMapping("/seguidores")
+	@ResponseBody
+	public List<Usuario> seguidores(String usuario){
+	return usuarioRepositorio.find_seguidores_id(usuario);
+	}
 }
