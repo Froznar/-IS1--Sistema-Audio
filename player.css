@@ -1,0 +1,63 @@
+@import url('fontello.css');
+@import url('animation.css');
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+
+
+body {
+    background: #4A5964;
+}
+
+#player {
+    width: 200px;
+    margin: 0 ;
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#player_track {
+    font-family: "Roboto", "Helvetica", sans-serif;
+    font-weight: 300;
+}
+
+#player_artwork a img {
+    width: 100%;
+}
+
+#player_track_title a {
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+#player_track_artist {
+    color: #999;
+    display: block;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+#player_buttons ul {
+    margin: 0;
+    padding: 10px;
+    list-style-type: none;
+    width: 90px;
+    margin: 0 auto;
+}
+
+#player_buttons ul li {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+#player_buttons ul li a {
+    font-size: 1.0em;
+    color: #FFF;
+}
+
+#player_buttons ul li a:hover {
+    color: #000;
+}
