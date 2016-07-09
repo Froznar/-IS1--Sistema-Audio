@@ -99,6 +99,21 @@ public class HertzzApplication {
 	public List<Usuario> top10(){
 		return usuarioRepositorio.Top10();
 	}
+<<<<<<< HEAD
+	
+	@RequestMapping("/usuario2")
+	@ResponseBody
+	public Usuario usuario2(Integer usuario){
+		return usuarioRepositorio.find_usuario2(usuario);
+	}
+	
+	@RequestMapping("/seguidores")
+	@ResponseBody
+	public List<Usuario> seguidores(Integer usuario){
+		return usuarioRepositorio.find_seguidores_id(usuario);
+	}
+	
+=======
 
 	
 	@RequestMapping(value = "/search_usuario", method = RequestMethod.GET)
@@ -109,4 +124,5 @@ public class HertzzApplication {
 	}
 	
 
+>>>>>>> 5e857781a35d8c66b5dff013e68db7572888f8ce
 }
