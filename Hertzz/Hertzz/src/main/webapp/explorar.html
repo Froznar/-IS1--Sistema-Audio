@@ -27,20 +27,11 @@
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 	<script type="text/javascript">
          function HertzzController($scope,$http) {
-             $http.get("usuarios").success( function(response) {
-                 $scope.usuarios = response;
-              });
-             $scope.ButtonClick = function(){
-            	 var Usuario = {
-        				 usuario: $scope.user,
-        				 tipo: $scope.btipo
-        		 };
-            	 $http.get("login", {params: {usuario: $scope.user, contrasenha: $scope.password}}).then( function(response) { //Funcion asincrona
-                 	var respuesta = response.data;
-                 	if(respuesta == "true") {window.location.replace('/user.html?'+$scope.user);} //Me redirecciona a /user.html?usuario
-           		 	else {$scope.Message = "Usuario o Contrasenha incorrecto";}
-            	 });
-            	 //Si el if y else van aqui, respuesta aun no tiene valor y entra al else.
+             
+             $scope.BuscarUsuario = function(){
+            	 $http.get("search_usuario", {params:{usuario: $scope.name_ro_cod_user}}).success( function(response) {
+                	 $scope.Ubuscado = response;
+                  });
         	 }
              $scope.BuscarCancion = function(){
             	 if($scope.btipo == 1){
@@ -82,7 +73,7 @@
   		<br>
   		<br>
   		<br>
-  		<input class="btn btn-default" type="submit" value="Mi música">
+  		<input class="btn btn-default" type="submit" value="Mi música" onclick = "location='/user.html'">
   		
   	</div>
   	<div class="col-md-3 cent">
@@ -115,7 +106,7 @@
 		<label class="radio-inline"><input type="radio" ng-model="btipo" name="optradio" ng-value="2"/>Album</label>
 		  		
   		<input type="text"  id="busqueda_cancion" name="Bcancion" ng-model="eleccion" placeholder="¿Qué deseas escuchar?"/>
-  		<input class="btn btn-default" type="button" value="Submit" ng-click="BuscarCancion()" />
+  		<input class="btn btn-default" type="button" value="Buscar" ng-click="BuscarCancion()" />
   		
   		</fieldset>
   		<br>
@@ -137,18 +128,32 @@
   		
   		<h3 class="normalfont">Busqueda de Usuarios</h3>
   		<fieldset>
-  			<label class="radio-inline"><input type="radio" name="optradio">Nombre</label>
-			<label class="radio-inline"><input type="radio" name="optradio">Codigo</label>
-		  		
-  			<input type="text"  id="busqueda_usuario" name="Busuario" placeholder="¿Buscas a alguien?"/>
+  				
+  			<input type="text"  id="busqueda_usuario" name="Busuario" ng-model="name_ro_cod_user" placeholder="¿Buscas a alguien?"/>
+  			<input class="btn btn-default" type="button" value="Buscar" ng-click="BuscarUsuario()" />
   		</fieldset>
+  		<div class="col-md-12 cent">
+  			
+		    <table  class="tablesxD">
+				<tr>
+					<td>{{ Ubuscado.Nombre_completo }}</td>
+				</tr> 
+				<tr>
+					<td>{{ Ubuscado.Correo_electronico }}</td>
+				</tr> 
+				
+			</table>
+			<fieldset>
+  				<input class="btn btn-default" type="button" value="Saber más" ng-click="BuscarMasUsuario()" onclick = "location='/usersearch.html'" />
+  			</fieldset>
+  		</div>
     </div>
     <!-- USUARIOS MAS ACTIVOS DE LOS ULTIMOS 6 MESES -->
     <div class="col-md-4 cent">
     	<h3 class="normalfont">Usuarios mas activos ultimos 6 meses</h3>
-    	<table>
+    	<table class="tablesxD">
 			<tr ng-repeat = "usuario in top10">
-				 <td>{{ usuario.Nombre_usuario }}</td> 
+				 <td>{{ usuario.Nombre_usuario }}</td>
 			</tr>
 		</table>
     </div>

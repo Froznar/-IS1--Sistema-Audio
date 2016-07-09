@@ -15,6 +15,24 @@
              $http.get("usuario", {params:{usuario: window.location.search.replace("?","")}}).success( function(response) {
             	 $scope.usuario = response;
               });
+             $scope.BuscarCancion = function(){
+               if($scope.btipo == 1){
+                 $http.get("canciones", {params: {cancion: $scope.eleccion}}).then( function(response) { //Funcion asincrona
+                        console.log($scope.eleccion);
+                    $scope.albumes = null;
+                  $scope.canciones = response.data;
+                      console.log($scope.canciones[0]);
+                 });   
+               }
+               else{
+                 $http.get("albumes", {params: {album: $scope.eleccion}}).then( function(response) { //Funcion asincrona
+                      
+                 $scope.albumes = response.data;
+                 console.log($scope.albumes[0]);
+                      $scope.canciones = null;
+                 });
+               }
+             }
          }
     </script>
 	
@@ -25,6 +43,7 @@
     <link href="css/style.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="fonts/stylesheet.css">
+	<link rel="stylesheet" href="css/player.css">
 	<link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
 	
 	<!-- Custom Fonts -->
@@ -33,6 +52,10 @@
 	<!-- jQuery and Modernizr-->
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="js/modernizr.custom.97074.js"></script>
+	<script src="http://connect.soundcloud.com/sdk.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="javascripts/player.js"></script>
+    
 </head>
 <body>
 
@@ -43,12 +66,16 @@
       <h4 class="titlefont">Hertzz Music</h4>
   	</div>
   	<div class="col-md-3 cent">
-  		<input class="btn btn-default" type="submit" value="Submit">
+      <br>
+      <br>
+      <br>
+  		<input class="btn btn-default" type="submit" value="Explorar" onclick = "location='/explorar.html'">
   	</div>
   	<div class="col-md-3 cent">
   		<h4 class="titlefont">Seguidores</h4>
   	</div>
   	<div class="col-md-3 cent">
+      <br>
   		<h2 class="titlefont">{{ usuario.Nombre_usuario }}</h2>
   	</div>
   </div>
@@ -57,6 +84,35 @@
     <!--REPRODUCTOR-->
     <div class="col-md-4">
       <h3>Reproductor</h3>
+       	<div id="player" >
+	       	<div id="player_artwork">
+	            <a href="javascript:void(0);">
+	                <img src="images/Transmissions-cover.jpg" class="img-responsive" alt="Responsive image">
+	            </a>
+	       	</div>
+	       	<div id="player_track">
+	            <div id="player_track_title">
+	                <a href="">Track Title</a>
+	            </div>
+	            <div id="player_track_artist">
+	                Artist
+	            </div>
+	       	</div>
+	       	<div id="player_buttons">
+	            <ul>
+	                <li><a href="javascript:void(0);" id="player_prev"><span class="fa fa-backward"></span></a></li>
+	                <li><a href="javascript:void(0);" id="player_play"><span class="fa fa-play"></span></a></li>
+	                <li><a href="javascript:void(0);" id="player_next"><span class="fa fa-forward"></span></a></li>
+	            </ul>
+	       	</div>
+    	</div>
+    	<div>
+			<h2>Audio MP3</h2>
+			<audio id="sonido" src="Crystalised.mp3"></audio>
+			<button onclick="javascript:document.getElementById('sonido').play();">Ejecutar</button>
+			<button onclick="javascript:document.getElementById('sonido').pause();">Pausa</button>
+		</div>
+      
     </div>
     <div class="col-md-8 cent">
       <div class="row">
@@ -64,9 +120,35 @@
         <div class="col-md-12">
           <h3>Top 10</h3>
         </div>
+        <!--BUSQUEDA-->
         <div class="col-md-6">
-          <h3>Busqueda</h3>
+          <h3 class="normalfont">Busqueda de Musica</h3>
+    
+          <fieldset>
+              <label class="radio-inline"><input type="radio" ng-model="btipo" name="optradio" ng-value="1"/>Canción</label>
+              <label class="radio-inline"><input type="radio" ng-model="btipo" name="optradio" ng-value="2"/>Album</label>
+          
+              <input type="text"  id="busqueda_cancion" name="Bcancion" ng-model="eleccion" placeholder="¿Qué deseas escuchar?"/>
+              <input class="btn btn-default" type="button" value="Submit" ng-click="BuscarCancion()" />
+      
+          </fieldset>
+          <br>
+          <div class="col-md-12 cent" ng-show=true>
+            Resultados:
+            <table>
+              <tr ng-repeat = "cancion in canciones">
+                
+                 <td>{{ cancion.Nombre_Cancion }}</td> 
+              </tr>
+              <tr ng-repeat = "album in albumes">
+                
+                 <td>{{ album.Nombre_Album }}</td> 
+              </tr>
+            </table>
+        
+          </div>
         </div>
+        <!--SEGUIDORES-->
         <div class="col-md-6">
           <h3>Seguidores</h3>
         </div>

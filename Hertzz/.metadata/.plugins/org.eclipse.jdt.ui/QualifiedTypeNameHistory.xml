@@ -1,38 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
-<fullyQualifiedTypeName name="javax.persistence.JoinTable"/>
-<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
-<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
-<fullyQualifiedTypeName name="com.Hertzz.repositorio.AdministradorRepositorio"/>
-<fullyQualifiedTypeName name="javax.transaction.Transactional"/>
-<fullyQualifiedTypeName name="com.Hertzz.repositorio.PlaylistRepositorio"/>
-<fullyQualifiedTypeName name="com.Hertzz.dominio.Playlist"/>
-<fullyQualifiedTypeName name="com.Hertzz.dominio.Cancion"/>
-<fullyQualifiedTypeName name="com.Hertzz.dominio.Album"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-<fullyQualifiedTypeName name="com.Hertzz.repositorio.ArtistaRepositorio"/>
-<fullyQualifiedTypeName name="com.Hertzz.repositorio.AlbumRepositorio"/>
-<fullyQualifiedTypeName name="com.Hertzz.dominio.Artista"/>
-<fullyQualifiedTypeName name="com.Hertzz.repositorio.ExUsuarioRepositorio"/>
-<fullyQualifiedTypeName name="com.Hertzz.dominio.ExUsuario"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
-<fullyQualifiedTypeName name="com.Hertzz.dominio.Usuario"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.EnableAutoConfiguration"/>
-<fullyQualifiedTypeName name="com.Hertzz.repositorio.UsuarioRepositorio"/>
-<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.SpringBootApplication"/>
-<fullyQualifiedTypeName name="org.springframework.boot.orm.jpa.EntityScan"/>
-<fullyQualifiedTypeName name="com.Hertzz.repositorio.CancionRepositorio"/>
-<fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.EnableWebMvc"/>
-<fullyQualifiedTypeName name="javax.persistence.MappedSuperclass"/>
-<fullyQualifiedTypeName name="javax.persistence.Entity"/>
-<fullyQualifiedTypeName name="javax.persistence.Inheritance"/>
-<fullyQualifiedTypeName name="javax.persistence.DiscriminatorColumn"/>
 </qualifiedTypeNameHistroy>

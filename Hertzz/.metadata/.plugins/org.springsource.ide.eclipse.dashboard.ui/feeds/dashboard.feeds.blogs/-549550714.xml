@@ -5,7 +5,135 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2016-07-08T13:56:00Z</updated>
+  <updated>2016-07-08T22:14:11Z</updated>
+  <entry>
+    <title>Java DSL for Spring Integration 1.2 M1 and 1.1.2 are available</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/07/08/java-dsl-for-spring-integration-1-2-m1-and-1-1-2-are-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2016-07-08:2550</id>
+    <updated>2016-07-08T22:14:11Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;I&amp;#8217;m pleased to announce that the Java DSL for Spring Integration &lt;code&gt;1.2 M1&lt;/code&gt; is available now!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;First of I’d like to thank everyone who created issues, raised Pull Requests, provided feedback or just asked questions on StackOverflow.
+Without the community we couldn&amp;#8217;t be the successful project we are today!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The artifact &lt;code&gt;org.springframework.integration:spring-integration-java-dsl:1.2.0.M1&lt;/code&gt; is available in the &lt;a href="http://repo.spring.io/milestone"&gt;Milestone repo&lt;/a&gt;.
+So, give it a shot and don&amp;#8217;t hesitate to raise a &lt;a href="https://github.com/spring-projects/spring-integration-java-dsl/issues"&gt;GH issue&lt;/a&gt; for any feedback!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Some highlights of the current iteration:&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="apache-kafka-0-9-support" class="sect0"&gt;&lt;a class="anchor" href="#apache-kafka-0-9-support"&gt;&lt;/a&gt;Apache Kafka 0.9 support&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Based on the recently released &lt;a href="https://spring.io/blog/2016/07/04/spring-for-apache-kafka-1-0-and-spring-integration-kafka-2-0-go-ga"&gt;Spring for Apache Kafka&lt;/a&gt; project, a new &lt;code&gt;Kafka09&lt;/code&gt; factory has been introduced.
+This is straightforward Java DSL factory for producing &lt;code&gt;IntegrationComponentSpec&lt;/code&gt; fluent API builders for adapters based on the a Spring for Apache Kafka foundation.
+An existing &lt;code&gt;Kafka&lt;/code&gt; factory for Apache Kafka &lt;code&gt;0.8&lt;/code&gt; support is still present for backward compatibility.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="runtime-flow-registration" class="sect0"&gt;&lt;a class="anchor" href="#runtime-flow-registration"&gt;&lt;/a&gt;Runtime flow registration&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In many cases it would be better to specify an integration flow based on the system state or even during some business function invocation.
+Or even make it volatile after execution.
+For this purpose an &lt;code&gt;IntegrationFlowContext&lt;/code&gt; component has been introduced to let the manual &lt;code&gt;IntegrationFlow&lt;/code&gt; control.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Autowired
+private IntegrationFlowContext context;
+...
+
+IntegrationFlow myFlow = f -&amp;gt; f
+  			.&amp;lt;String, String&amp;gt;transform(String::toUpperCase)
+   			.transform("Hello, "::concat);
+
+String flowId = this.context.register(myFlow);
+MessagingTemplate messagingTemplate = this.context.messagingTemplateFor(flowId);
+
+assertEquals("Hello, SPRING",
+            messagingTemplate.convertSendAndReceive("spring", String.class));
+
+this.context.remove(flowId);&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See &lt;code&gt;IntegrationFlowContext&lt;/code&gt; JavaDocs for more information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="operator-log" class="sect0"&gt;&lt;a class="anchor" href="#operator-log"&gt;&lt;/a&gt;Operator log()&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For convenience to log the message journey Spring Integration manner (a-la &lt;code&gt;&amp;lt;logging-channel-adapter&amp;gt;&lt;/code&gt;), a new &lt;code&gt;log()&lt;/code&gt; operator has been introduced.
+Underneath it is represented just by &lt;code&gt;WireTap&lt;/code&gt; &lt;code&gt;ChannelInterceptor&lt;/code&gt; and &lt;code&gt;LoggingHandler&lt;/code&gt; as subscriber.
+It is responsible to log message incoming into the next endpoint:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;.filter(...)
+.log(LoggingHandler.Level.ERROR, "test.category", m -&amp;gt; m.getHeaders().getId())
+.route(...)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In this example an &lt;code&gt;id&lt;/code&gt; header will be logged with &lt;code&gt;ERROR&lt;/code&gt; level onto "test.category" only for messages passed the filter and before routing.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="messagechannelspec-wiretap" class="sect0"&gt;&lt;a class="anchor" href="#messagechannelspec-wiretap"&gt;&lt;/a&gt;MessageChannelSpec.wireTap()&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;A &lt;code&gt;.wireTap()&lt;/code&gt; fluent API has been introduced for &lt;code&gt;MessageChannelSpec&lt;/code&gt; builders.
+Now a target configuration gains much more from Java DSL usage:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+public QueueChannelSpec myChannel() {
+    return MessageChannels
+            .queue()
+            .wireTap("loggingFlow.input");
+}
+
+@Bean
+public IntegrationFlow loggingFlow() {
+    return f -&amp;gt; f.log();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id="typed-routers" class="sect0"&gt;&lt;a class="anchor" href="#typed-routers"&gt;&lt;/a&gt;Typed routers&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Having a pure Java instantiation for beans it really looks enough organic to have routing keys as any desired type and avoid converting to &lt;code&gt;String&lt;/code&gt; everything.
+Plus the type relaxing let us have configuration as generic-aware:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+public IntegrationFlow payloadTypeRouteFlow() {
+    return f -&amp;gt; f
+          .&amp;lt;Object, Class&amp;gt;route(Object::getClass, m -&amp;gt; m
+                         .channelMapping(String.class, "stringsChannel")
+                         .channelMapping(Integer.class, "integersChannel"));
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See &lt;a href="https://github.com/spring-projects/spring-integration-java-dsl/commits/v1.2.0.M1"&gt;commit history&lt;/a&gt; for &lt;code&gt;1.2.0.M1&lt;/code&gt; version for more information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="bug-fixes" class="sect0"&gt;&lt;a class="anchor" href="#bug-fixes"&gt;&lt;/a&gt;Bug Fixes&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The maintenance version &lt;code&gt;1.1.3&lt;/code&gt; has been also release with several nasty bug fixes and Spring Integration 4.3 compatibility.
+The &lt;code&gt;org.springframework.integration:spring-integration-java-dsl:1.1.3.RELEASE&lt;/code&gt; artifact is available in the &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search|ga|1|spring-integration-java-dsl"&gt;Maven Central&lt;/a&gt;.
+It is recommended to upgrade for everyone, especially if you use &lt;code&gt;JMS&lt;/code&gt; factory and beans which implement &lt;code&gt;ApplicationListener&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id="next-steps" class="sect0"&gt;&lt;a class="anchor" href="#next-steps"&gt;&lt;/a&gt;Next Steps&lt;/h1&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We expect the next Milestone 2 for version &lt;code&gt;1.2&lt;/code&gt; enough soon, over a couple weeks, with an RC and release somewhere in the middle of August.
+At the same time we are going to absorb &lt;code&gt;spring-integration-java-dsl&lt;/code&gt; project into &lt;a href="http://projects.spring.io/spring-integration/"&gt;Spring Integration Core&lt;/a&gt; with version &lt;code&gt;5.0&lt;/code&gt; and Java 8 code base.
+The current &lt;code&gt;1.2&lt;/code&gt; version will be still supported, but just for bug fixes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-java-dsl"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration-java-dsl/wiki/Spring-Integration-Java-DSL-Reference"&gt;Documentation&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration-java-dsl/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>CVE-2016-5007 Spring Security / MVC Path Matching Inconsistency</title>
     <link rel="alternate" href="https://spring.io/blog/2016/07/08/cve-2016-5007-spring-security-mvc-path-matching-inconsistency" />
@@ -748,27 +876,5 @@ public class SpringBootVaultHelloWorldApplication {&#xD;
 &lt;/ul&gt;
 &lt;p&gt;To get started using Spring Cloud Data Flow for Mesos &lt;a href="http://docs.spring.io/spring-cloud-dataflow-server-mesos/docs/1.0.0.RC1/reference/htmlsingle/#_getting_started"&gt;follow these steps&lt;/a&gt; outlined in the reference documentation.&lt;/p&gt;
 &lt;p&gt;For a complete list of changes and improvements, please refer to the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-mesos/issues?q=milestone%3A1.0.0.RC1"&gt;1.0.0.RC1 issues&lt;/a&gt;.&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Data Flow for Kubernetes 1.0.0.RC1 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/06/21/spring-cloud-data-flow-for-kubernetes-1-0-0-rc1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Thomas Risberg</name>
-    </author>
-    <id>tag:spring.io,2016-06-21:2531</id>
-    <updated>2016-06-21T16:56:00Z</updated>
-    <content type="html">&lt;p&gt;I am pleased to announce the 1.0.0.RC1 release candidate of Spring Cloud Data Flow for Kubernetes, a team effort that encompasses many new features under the hood.&lt;/p&gt;
-&lt;p&gt;This release candidate builds upon the recent 1.0.0.RC1 release of Spring Cloud Data Flow and also adds Cloud Foundry specific refinements. Some highlights include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Implements the TaskLauncher SPI to support launching of short-lived applications a.k.a tasks. They will be created as Kubernetes jobs and each task launch will create a new pod as part of the Kubernetes job&lt;/li&gt;
-  &lt;li&gt;Adds support to configure command line args as a separate set of properties to be passed to an application when it&amp;rsquo;s deployed. This is an important requirement for running Spring Batch jobs orchestrated as tasks using Spring Cloud Task programming model&lt;/li&gt;
-  &lt;li&gt;Adds support for RDBMS “datasource” to supplement persistent repository requirements&lt;/li&gt;
-  &lt;li&gt;Adds &lt;code&gt;/info&lt;/code&gt; API to query health checks and to supplement probing requirements&lt;/li&gt;
-  &lt;li&gt;Health endpoint improvements to standardize probing over readiness of all the applications orchestrated in Kubernetes&lt;/li&gt;
-  &lt;li&gt;Adds docker image for Spring Cloud Data Flow’s Kubernetes server so it can be deployed as a Kubernetes replication controller and service&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To get started using Spring Cloud Data Flow for Kubernetes &lt;a href="http://docs.spring.io/spring-cloud-dataflow-server-kubernetes/docs/1.0.0.RC1/reference/htmlsingle/#_getting_started"&gt;follow these steps&lt;/a&gt; outlined in the reference documentation.&lt;/p&gt;
-&lt;p&gt;For a complete list of changes and improvements, please refer to the &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow-server-kubernetes/issues?q=milestone%3A1.0.0.RC1"&gt;1.0.0.RC1 issues&lt;/a&gt;.&lt;/p&gt;</content>
   </entry>
 </feed>

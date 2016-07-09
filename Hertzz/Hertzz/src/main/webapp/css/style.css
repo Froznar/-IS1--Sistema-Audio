@@ -427,6 +427,10 @@ a.btn:focus{outline: 0;}
 
 .button{}
 		
+.tablesxD,th,td{
+	border-style: solid;
+    border-color:#5bf1ff #5bf1ff #5bf1ff #5bf1ff;
+    table-layout: auto;
 }
 
 
